@@ -9,6 +9,7 @@ import torch
 from torch.utils.data import DataLoader, RandomSampler, SequentialSampler
 from tqdm import tqdm, trange
 from attrdict import AttrDict
+from collections import deque
 
 from transformers import (
     BertConfig,
@@ -33,13 +34,11 @@ logger = logging.getLogger(__name__)
 def get_layerwise_lr(model, base_lr, lr_factor):
     param_optimizer = list(model.named_parameters())
     no_decay = ['bias', 'LayerNorm.bias', 'LayerNorm.weight']
-
-    # Group parameters by their depth in the model
     optimizer_grouped_parameters = [
         {
             'params': [p for n, p in param_optimizer if not any(nd in n for nd in no_decay) and 'bert.encoder.layer.' + str(i) + '.' in n],
             'weight_decay': 0.01,
-            'lr': base_lr * (lr_factor ** i)
+            'lr': base_lr * (lr_factor ** (11 - i)) # Adjust the power to set the LR appropriately for each layer
         }
         for i in range(12)  # Assuming BERT base with 12 layers
     ]
@@ -53,9 +52,33 @@ def get_layerwise_lr(model, base_lr, lr_factor):
         'weight_decay': 0.0,
         'lr': base_lr
     })
-
     return optimizer_grouped_parameters
 
+class EarlyStopping:
+    def __init__(self, patience=3, min_delta=0.001):
+        """
+        Args:
+            patience (int): Number of epochs to wait for improvement before stopping.
+            min_delta (float): Minimum change in the monitored quantity to qualify as an improvement.
+        """
+        self.patience = patience
+        self.min_delta = min_delta
+        self.counter = 0
+        self.best_loss = None
+        self.stop = False
+
+    def step(self, val_loss):
+        if self.best_loss is None:
+            self.best_loss = val_loss
+        elif self.best_loss - val_loss > self.min_delta:
+            self.best_loss = val_loss
+            self.counter = 0
+        else:
+            self.counter += 1
+            if self.counter >= self.patience:
+                self.stop = True
+
+        return self.stop
 
 def train(args,
           model,
@@ -72,17 +95,17 @@ def train(args,
         t_total = len(train_dataloader) // args.gradient_accumulation_steps * args.num_train_epochs
 
     # Prepare optimizer and schedule (linear warmup and decay)
-    no_decay = ['bias', 'LayerNorm.weight']
-    optimizer_grouped_parameters = [
-        {'params': [p for n, p in model.named_parameters() if not any(nd in n for nd in no_decay)],
-         'weight_decay': args.weight_decay},
-        {'params': [p for n, p in model.named_parameters() if any(nd in n for nd in no_decay)], 'weight_decay': 0.0}
-    ]
+    # no_decay = ['bias', 'LayerNorm.weight']
+    # optimizer_grouped_parameters = [
+    #     {'params': [p for n, p in model.named_parameters() if not any(nd in n for nd in no_decay)],
+    #      'weight_decay': args.weight_decay},
+    #     {'params': [p for n, p in model.named_parameters() if any(nd in n for nd in no_decay)], 'weight_decay': 0.0}
+    # ]
 
-    base_lr = 2e-5
-    lr_factor = 0.95
-    optimizer_grouped_parameters = get_layerwise_lr(model=BertForMultiLabelClassification.from_pretrained("bert-base-uncased"), base_lr=base_lr, lr_factor=lr_factor)
-    optimizer = AdamW(optimizer_grouped_parameters, lr=base_lr, eps=args.adam_epsilon)
+    base_lr = 5e-5
+    lr_factor = 0.98
+    optimizer_grouped_parameters = get_layerwise_lr(model, base_lr, lr_factor)
+    optimizer = AdamW(optimizer_grouped_parameters, lr=base_lr)
 
     #optimizer = AdamW(optimizer_grouped_parameters, lr=args.learning_rate, eps=args.adam_epsilon)
     scheduler = get_linear_schedule_with_warmup(
@@ -113,6 +136,10 @@ def train(args,
 
     model.zero_grad()
     train_iterator = trange(int(args.num_train_epochs), desc="Epoch")
+
+    early_stopping = EarlyStopping(patience=3, min_delta=0.001)
+    early_stop_triggered = False
+
     for _ in train_iterator:
         epoch_iterator = tqdm(train_dataloader, desc="Iteration")
         for step, batch in enumerate(epoch_iterator):
@@ -146,10 +173,15 @@ def train(args,
 
                 if args.logging_steps > 0 and global_step % args.logging_steps == 0:
                     if args.evaluate_test_during_training:
-                        evaluate(args, model, test_dataset, "test", global_step)
+                        results = evaluate(args, model, test_dataset, "test", global_step)
                     else:
-                        evaluate(args, model, dev_dataset, "dev", global_step)
-
+                        results = evaluate(args, model, dev_dataset, "dev", global_step)
+                    eval_loss = results["loss"]
+                    # Check for early stopping:
+                    if early_stopping.step(eval_loss):
+                        logger.info("Early stopping triggered!")
+                        early_stop_triggered = True
+                        break
                 if args.save_steps > 0 and global_step % args.save_steps == 0:
                     # Save model checkpoint
                     output_dir = os.path.join(args.output_dir, "checkpoint-{}".format(global_step))
@@ -170,9 +202,9 @@ def train(args,
                         logger.info("Saving optimizer and scheduler states to {}".format(output_dir))
 
             if args.max_steps > 0 and global_step > args.max_steps:
+                early_stop_triggered = True
                 break
-
-        if args.max_steps > 0 and global_step > args.max_steps:
+        if early_stop_triggered or (args.max_steps > 0 and global_step > args.max_steps):
             break
 
     return global_step, tr_loss / global_step
