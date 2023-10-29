@@ -1,0 +1,1296 @@
+(…)bert-base-cased/resolve/main/config.json: 100%|█| 570/570 [00:00<00:00, 35.9k
+(…)emotions-original/resolve/main/vocab.txt: 100%|█| 213k/213k [00:00<00:00, 6.5
+(…)nal/resolve/main/special_tokens_map.json: 100%|█| 182/182 [00:00<00:00, 89.6k
+(…)ginal/resolve/main/tokenizer_config.json: 100%|█| 235/235 [00:00<00:00, 136kB
+(…)otions-original/resolve/main/config.json: 100%|█| 1.67k/1.67k [00:00<00:00, 9
+model.safetensors: 100%|█████████████████████| 436M/436M [00:08<00:00, 53.7MB/s]
+Some weights of BertForMultiLabelClassification were not initialized from the model checkpoint at bert-base-cased and are newly initialized: ['classifier.weight', 'classifier.bias']
+You should probably TRAIN this model on a down-stream task to be able to use it for predictions and inference.
+10/28/2023 20:55:22 - INFO - data_loader -   Creating features from dataset file at data/original
+10/28/2023 20:55:22 - INFO - data_loader -   LOOKING AT data/original/train.tsv
+10/28/2023 20:55:22 - INFO - data_loader -   My favourite food is anything I didn't have to cook myself.	27	eebbqej
+10/28/2023 20:55:22 - INFO - data_loader -   What’s that extra B for?	6,7	edo4lm1
+10/28/2023 20:55:22 - INFO - data_loader -   Quick... there's a boot somewhere that you haven't licked today yet!	27	edoblwt
+10/28/2023 20:55:22 - INFO - data_loader -   I'm so gay I can't even drive straight - a bumper sticker older than most redditors	19	edfval6
+10/28/2023 20:55:22 - INFO - data_loader -   I don't know	27	ed98qh1
+10/28/2023 20:55:22 - INFO - data_loader -   Broom him fast.	27	edket23
+10/28/2023 20:55:22 - INFO - data_loader -   The balance above the base fee gets put somewhere else. Education, healthcare, etc. Voila, police aren't biased, people are proportionally fined. 	27	eepn62z
+10/28/2023 20:55:22 - INFO - data_loader -   Hi [NAME], I love you, that is all. Can't wait to see you in Worcester in February!	17,18	ee8wndy
+10/28/2023 20:55:22 - INFO - data_loader -   I mean it sucks but that man looks deaded	11,22	ed917ws
+Truncation was not explicitly activated but `max_length` is provided a specific value, please use `truncation=True` to explicitly truncate examples to max length. Defaulting to 'longest_first' truncation strategy. If you encode pairs of sequences (GLUE-style) with the tokenizer you can select this strategy more precisely by providing a specific strategy to `truncation`.
+/u/s/a/salsabil/miniconda3/envs/proj_env/lib/python3.8/site-packages/transformers/tokenization_utils_base.py:2393: FutureWarning: The `pad_to_max_length` argument is deprecated and will be removed in a future version, use `padding=True` or `padding='longest'` to pad to the longest sequence in the batch, or use `padding='max_length'` to pad to a max length. In this case, you can give a specific length with `max_length` (e.g. `max_length=45`) or leave max_length to None to pad to the maximal input size of the model (e.g. 512 for Bert).
+  warnings.warn(
+10/28/2023 20:55:33 - INFO - data_loader -   *** Example ***
+10/28/2023 20:55:33 - INFO - data_loader -   guid: train-0
+10/28/2023 20:55:33 - INFO - data_loader -   sentence: My favourite food is anything I didn't have to cook myself.
+10/28/2023 20:55:33 - INFO - data_loader -   tokens: My favourite food is anything I didn ' t have to cook myself .
+10/28/2023 20:55:33 - INFO - data_loader -   input_ids: 101 1422 9122 2094 1110 1625 146 1238 112 189 1138 1106 9834 1991 119 102 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+10/28/2023 20:55:33 - INFO - data_loader -   attention_mask: 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+10/28/2023 20:55:33 - INFO - data_loader -   token_type_ids: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+10/28/2023 20:55:33 - INFO - data_loader -   label: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1
+10/28/2023 20:55:33 - INFO - data_loader -   *** Example ***
+10/28/2023 20:55:33 - INFO - data_loader -   guid: train-1
+10/28/2023 20:55:33 - INFO - data_loader -   sentence: Now if he does off himself, everyone will think hes having a laugh screwing with people instead of actually dead
+10/28/2023 20:55:33 - INFO - data_loader -   tokens: Now if he does off himself , everyone will think he ##s having a laugh screw ##ing with people instead of actually dead
+10/28/2023 20:55:33 - INFO - data_loader -   input_ids: 101 1986 1191 1119 1674 1228 1471 117 2490 1209 1341 1119 1116 1515 170 4046 13084 1158 1114 1234 1939 1104 2140 2044 102 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+10/28/2023 20:55:33 - INFO - data_loader -   attention_mask: 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+10/28/2023 20:55:33 - INFO - data_loader -   token_type_ids: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+10/28/2023 20:55:33 - INFO - data_loader -   label: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1
+10/28/2023 20:55:33 - INFO - data_loader -   *** Example ***
+10/28/2023 20:55:33 - INFO - data_loader -   guid: train-2
+10/28/2023 20:55:33 - INFO - data_loader -   sentence: WHY THE FUCK IS BAYLESS ISOING
+10/28/2023 20:55:33 - INFO - data_loader -   tokens: W ##H ##Y THE F ##UC ##K IS BA ##Y ##LE ##SS ISO ##ING
+10/28/2023 20:55:33 - INFO - data_loader -   input_ids: 101 160 3048 3663 7462 143 21986 2428 19432 12465 3663 17516 12480 11533 15740 102 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+10/28/2023 20:55:33 - INFO - data_loader -   attention_mask: 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+10/28/2023 20:55:33 - INFO - data_loader -   token_type_ids: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+10/28/2023 20:55:33 - INFO - data_loader -   label: 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+10/28/2023 20:55:33 - INFO - data_loader -   *** Example ***
+10/28/2023 20:55:33 - INFO - data_loader -   guid: train-3
+10/28/2023 20:55:33 - INFO - data_loader -   sentence: To make her feel threatened
+10/28/2023 20:55:33 - INFO - data_loader -   tokens: To make her feel threatened
+10/28/2023 20:55:33 - INFO - data_loader -   input_ids: 101 1706 1294 1123 1631 4963 102 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+10/28/2023 20:55:33 - INFO - data_loader -   attention_mask: 1 1 1 1 1 1 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+10/28/2023 20:55:33 - INFO - data_loader -   token_type_ids: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+10/28/2023 20:55:33 - INFO - data_loader -   label: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0
+10/28/2023 20:55:33 - INFO - data_loader -   *** Example ***
+10/28/2023 20:55:33 - INFO - data_loader -   guid: train-4
+10/28/2023 20:55:33 - INFO - data_loader -   sentence: Dirty Southern Wankers
+10/28/2023 20:55:33 - INFO - data_loader -   tokens: Dirty Southern Wan ##kers
+10/28/2023 20:55:33 - INFO - data_loader -   input_ids: 101 14853 2685 17878 8811 102 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+10/28/2023 20:55:33 - INFO - data_loader -   attention_mask: 1 1 1 1 1 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+10/28/2023 20:55:33 - INFO - data_loader -   token_type_ids: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+10/28/2023 20:55:33 - INFO - data_loader -   label: 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+10/28/2023 20:55:33 - INFO - data_loader -   *** Example ***
+10/28/2023 20:55:33 - INFO - data_loader -   guid: train-5
+10/28/2023 20:55:33 - INFO - data_loader -   sentence: OmG pEyToN iSn'T gOoD eNoUgH tO hElP uS iN tHe PlAyOfFs! Dumbass Broncos fans circa December 2015.
+10/28/2023 20:55:33 - INFO - data_loader -   tokens: O ##m ##G p ##E ##y ##T ##o ##N i ##S ##n ' T g ##O ##o ##D e ##N ##o ##U ##g ##H t ##O h ##E ##l ##P u ##S i ##N t ##H ##e P ##l ##A ##y ##O ##f ##F ##s ! Du ##mba ##ss Broncos fans circa December 2015 .
+10/28/2023 20:55:33 - INFO - data_loader -   input_ids: 101 152 1306 2349 185 2036 1183 1942 1186 2249 178 1708 1179 112 157 176 2346 1186 2137 174 2249 1186 2591 1403 3048 189 2346 177 2036 1233 2101 190 1708 178 2249 189 3048 1162 153 1233 1592 1183 2346 2087 2271 1116 106 12786 10806 102
+10/28/2023 20:55:33 - INFO - data_loader -   attention_mask: 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
+10/28/2023 20:55:33 - INFO - data_loader -   token_type_ids: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+10/28/2023 20:55:33 - INFO - data_loader -   label: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0
+10/28/2023 20:55:33 - INFO - data_loader -   *** Example ***
+10/28/2023 20:55:33 - INFO - data_loader -   guid: train-6
+10/28/2023 20:55:33 - INFO - data_loader -   sentence: Yes I heard abt the f bombs! That has to be why. Thanks for your reply:) until then hubby and I will anxiously wait 😝
+10/28/2023 20:55:33 - INFO - data_loader -   tokens: Yes I heard a ##bt the f bombs ! That has to be why . Thanks for your reply : ) until then hub ##by and I will anxiously wait [UNK]
+10/28/2023 20:55:33 - INFO - data_loader -   input_ids: 101 2160 146 1767 170 21238 1103 175 10095 106 1337 1144 1106 1129 1725 119 5749 1111 1240 7163 131 114 1235 1173 10960 2665 1105 146 1209 26433 3074 100 102 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+10/28/2023 20:55:33 - INFO - data_loader -   attention_mask: 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+10/28/2023 20:55:33 - INFO - data_loader -   token_type_ids: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+10/28/2023 20:55:33 - INFO - data_loader -   label: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0
+10/28/2023 20:55:33 - INFO - data_loader -   *** Example ***
+10/28/2023 20:55:33 - INFO - data_loader -   guid: train-7
+10/28/2023 20:55:33 - INFO - data_loader -   sentence: We need more boards and to create a bit more space for [NAME]. Then we’ll be good.
+10/28/2023 20:55:33 - INFO - data_loader -   tokens: We need more boards and to create a bit more space for [NAME] . Then we ’ ll be good .
+10/28/2023 20:55:33 - INFO - data_loader -   input_ids: 101 1284 1444 1167 8190 1105 1106 2561 170 2113 1167 2000 1111 1 119 1599 1195 787 1325 1129 1363 119 102 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+10/28/2023 20:55:33 - INFO - data_loader -   attention_mask: 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+10/28/2023 20:55:33 - INFO - data_loader -   token_type_ids: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+10/28/2023 20:55:33 - INFO - data_loader -   label: 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0
+10/28/2023 20:55:33 - INFO - data_loader -   *** Example ***
+10/28/2023 20:55:33 - INFO - data_loader -   guid: train-8
+10/28/2023 20:55:33 - INFO - data_loader -   sentence: Damn youtube and outrage drama is super lucrative for reddit
+10/28/2023 20:55:33 - INFO - data_loader -   tokens: Damn you ##tub ##e and outrage drama is super lucrative for red ##dit
+10/28/2023 20:55:33 - INFO - data_loader -   input_ids: 101 8441 1128 25098 1162 1105 22052 3362 1110 7688 23284 1111 1894 17903 102 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+10/28/2023 20:55:33 - INFO - data_loader -   attention_mask: 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+10/28/2023 20:55:33 - INFO - data_loader -   token_type_ids: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+10/28/2023 20:55:33 - INFO - data_loader -   label: 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+10/28/2023 20:55:33 - INFO - data_loader -   *** Example ***
+10/28/2023 20:55:33 - INFO - data_loader -   guid: train-9
+10/28/2023 20:55:33 - INFO - data_loader -   sentence: It might be linked to the trust factor of your friend.
+10/28/2023 20:55:33 - INFO - data_loader -   tokens: It might be linked to the trust factor of your friend .
+10/28/2023 20:55:33 - INFO - data_loader -   input_ids: 101 1135 1547 1129 5128 1106 1103 3496 5318 1104 1240 1910 119 102 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+10/28/2023 20:55:33 - INFO - data_loader -   attention_mask: 1 1 1 1 1 1 1 1 1 1 1 1 1 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+10/28/2023 20:55:33 - INFO - data_loader -   token_type_ids: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+10/28/2023 20:55:33 - INFO - data_loader -   label: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1
+10/28/2023 20:55:33 - INFO - data_loader -   Saving features into cached file data/original/cached_goemotions_bert-base-cased_50_train
+10/28/2023 20:55:38 - INFO - data_loader -   Creating features from dataset file at data/original
+10/28/2023 20:55:38 - INFO - data_loader -   LOOKING AT data/original/dev.tsv
+10/28/2023 20:55:38 - INFO - data_loader -   Is this in New Orleans?? I really feel like this is New Orleans.	27	edgurhb
+10/28/2023 20:55:38 - INFO - data_loader -   [NAME] is vastly overrated. Much bette4 [RELIGION] delis in the outer Burroughs	4	edc0amo
+10/28/2023 20:55:39 - INFO - data_loader -   *** Example ***
+10/28/2023 20:55:39 - INFO - data_loader -   guid: dev-0
+10/28/2023 20:55:39 - INFO - data_loader -   sentence: Is this in New Orleans?? I really feel like this is New Orleans.
+10/28/2023 20:55:39 - INFO - data_loader -   tokens: Is this in New Orleans ? ? I really feel like this is New Orleans .
+10/28/2023 20:55:39 - INFO - data_loader -   input_ids: 101 2181 1142 1107 1203 5705 136 136 146 1541 1631 1176 1142 1110 1203 5705 119 102 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+10/28/2023 20:55:39 - INFO - data_loader -   attention_mask: 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+10/28/2023 20:55:39 - INFO - data_loader -   token_type_ids: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+10/28/2023 20:55:39 - INFO - data_loader -   label: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1
+10/28/2023 20:55:39 - INFO - data_loader -   *** Example ***
+10/28/2023 20:55:39 - INFO - data_loader -   guid: dev-1
+10/28/2023 20:55:39 - INFO - data_loader -   sentence: You know the answer man, you are programmed to capture those codes they send you, don’t avoid them!
+10/28/2023 20:55:39 - INFO - data_loader -   tokens: You know the answer man , you are programmed to capture those codes they send you , don ’ t avoid them !
+10/28/2023 20:55:39 - INFO - data_loader -   input_ids: 101 1192 1221 1103 2590 1299 117 1128 1132 18693 1106 4821 1343 9812 1152 3952 1128 117 1274 787 189 3644 1172 106 102 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+10/28/2023 20:55:39 - INFO - data_loader -   attention_mask: 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+10/28/2023 20:55:39 - INFO - data_loader -   token_type_ids: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+10/28/2023 20:55:39 - INFO - data_loader -   label: 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1
+10/28/2023 20:55:39 - INFO - data_loader -   *** Example ***
+10/28/2023 20:55:39 - INFO - data_loader -   guid: dev-2
+10/28/2023 20:55:39 - INFO - data_loader -   sentence: I've never been this sad in my life!
+10/28/2023 20:55:39 - INFO - data_loader -   tokens: I ' ve never been this sad in my life !
+10/28/2023 20:55:39 - INFO - data_loader -   input_ids: 101 146 112 1396 1309 1151 1142 6782 1107 1139 1297 106 102 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+10/28/2023 20:55:39 - INFO - data_loader -   attention_mask: 1 1 1 1 1 1 1 1 1 1 1 1 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+10/28/2023 20:55:39 - INFO - data_loader -   token_type_ids: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+10/28/2023 20:55:39 - INFO - data_loader -   label: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0
+10/28/2023 20:55:39 - INFO - data_loader -   *** Example ***
+10/28/2023 20:55:39 - INFO - data_loader -   guid: dev-3
+10/28/2023 20:55:39 - INFO - data_loader -   sentence: The economy is heavily controlled and subsidized by the government. In any case, I was poking at the lack of nuance in US politics today
+10/28/2023 20:55:39 - INFO - data_loader -   tokens: The economy is heavily controlled and sub ##si ##dized by the government . In any case , I was poking at the lack of n ##uan ##ce in US politics today
+10/28/2023 20:55:39 - INFO - data_loader -   input_ids: 101 1109 4190 1110 3777 4013 1105 4841 5053 26332 1118 1103 1433 119 1130 1251 1692 117 146 1108 24337 1120 1103 2960 1104 183 8734 2093 1107 1646 4039 2052 102 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+10/28/2023 20:55:39 - INFO - data_loader -   attention_mask: 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+10/28/2023 20:55:39 - INFO - data_loader -   token_type_ids: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+10/28/2023 20:55:39 - INFO - data_loader -   label: 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1
+10/28/2023 20:55:39 - INFO - data_loader -   *** Example ***
+10/28/2023 20:55:39 - INFO - data_loader -   guid: dev-4
+10/28/2023 20:55:39 - INFO - data_loader -   sentence: He could have easily taken a real camera from a legitimate source and change the price in Word/Photoshop and then print it out.
+10/28/2023 20:55:39 - INFO - data_loader -   tokens: He could have easily taken a real camera from a legitimate source and change the price in Word / Photo ##sh ##op and then print it out .
+10/28/2023 20:55:39 - INFO - data_loader -   input_ids: 101 1124 1180 1138 3253 1678 170 1842 4504 1121 170 11582 2674 1105 1849 1103 3945 1107 10683 120 21906 2737 4184 1105 1173 5911 1122 1149 119 102 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+10/28/2023 20:55:39 - INFO - data_loader -   attention_mask: 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+10/28/2023 20:55:39 - INFO - data_loader -   token_type_ids: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+10/28/2023 20:55:39 - INFO - data_loader -   label: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0
+10/28/2023 20:55:39 - INFO - data_loader -   *** Example ***
+10/28/2023 20:55:39 - INFO - data_loader -   guid: dev-5
+10/28/2023 20:55:39 - INFO - data_loader -   sentence: Thank you for your vote of confidence, but we statistically can't get to 10 wins.
+10/28/2023 20:55:39 - INFO - data_loader -   tokens: Thank you for your vote of confidence , but we statistical ##ly can ' t get to 10 wins .
+10/28/2023 20:55:39 - INFO - data_loader -   input_ids: 101 4514 1128 1111 1240 2992 1104 6595 117 1133 1195 11435 1193 1169 112 189 1243 1106 1275 4646 119 102 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+10/28/2023 20:55:39 - INFO - data_loader -   attention_mask: 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+10/28/2023 20:55:39 - INFO - data_loader -   token_type_ids: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+10/28/2023 20:55:39 - INFO - data_loader -   label: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0
+10/28/2023 20:55:39 - INFO - data_loader -   *** Example ***
+10/28/2023 20:55:39 - INFO - data_loader -   guid: dev-6
+10/28/2023 20:55:39 - INFO - data_loader -   sentence: Wah Mum other people call me on my bullshit and I can't ban them , Go out side son.
+10/28/2023 20:55:39 - INFO - data_loader -   tokens: W ##ah Mum other people call me on my bullshit and I can ' t ban them , Go out side son .
+10/28/2023 20:55:39 - INFO - data_loader -   input_ids: 101 160 3354 20409 1168 1234 1840 1143 1113 1139 17480 1105 146 1169 112 189 8214 1172 117 3414 1149 1334 1488 119 102 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+10/28/2023 20:55:39 - INFO - data_loader -   attention_mask: 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+10/28/2023 20:55:39 - INFO - data_loader -   token_type_ids: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+10/28/2023 20:55:39 - INFO - data_loader -   label: 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+10/28/2023 20:55:39 - INFO - data_loader -   *** Example ***
+10/28/2023 20:55:39 - INFO - data_loader -   guid: dev-7
+10/28/2023 20:55:39 - INFO - data_loader -   sentence: There it is!
+10/28/2023 20:55:39 - INFO - data_loader -   tokens: There it is !
+10/28/2023 20:55:39 - INFO - data_loader -   input_ids: 101 1247 1122 1110 106 102 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+10/28/2023 20:55:39 - INFO - data_loader -   attention_mask: 1 1 1 1 1 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+10/28/2023 20:55:39 - INFO - data_loader -   token_type_ids: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+10/28/2023 20:55:39 - INFO - data_loader -   label: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1
+10/28/2023 20:55:39 - INFO - data_loader -   *** Example ***
+10/28/2023 20:55:39 - INFO - data_loader -   guid: dev-8
+10/28/2023 20:55:39 - INFO - data_loader -   sentence: At least now [NAME] has more time to gain his confidence
+10/28/2023 20:55:39 - INFO - data_loader -   tokens: At least now [NAME] has more time to gain his confidence
+10/28/2023 20:55:39 - INFO - data_loader -   input_ids: 101 1335 1655 1208 1 1144 1167 1159 1106 4361 1117 6595 102 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+10/28/2023 20:55:39 - INFO - data_loader -   attention_mask: 1 1 1 1 1 1 1 1 1 1 1 1 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+10/28/2023 20:55:39 - INFO - data_loader -   token_type_ids: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+10/28/2023 20:55:39 - INFO - data_loader -   label: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0
+10/28/2023 20:55:39 - INFO - data_loader -   *** Example ***
+10/28/2023 20:55:39 - INFO - data_loader -   guid: dev-9
+10/28/2023 20:55:39 - INFO - data_loader -   sentence: Good. We don't want more thrash liberal offspring in this world.
+10/28/2023 20:55:39 - INFO - data_loader -   tokens: Good . We don ' t want more th ##rash liberal offspring in this world .
+10/28/2023 20:55:39 - INFO - data_loader -   input_ids: 101 2750 119 1284 1274 112 189 1328 1167 24438 16543 7691 14416 1107 1142 1362 119 102 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+10/28/2023 20:55:39 - INFO - data_loader -   attention_mask: 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+10/28/2023 20:55:39 - INFO - data_loader -   token_type_ids: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+10/28/2023 20:55:39 - INFO - data_loader -   label: 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+10/28/2023 20:55:39 - INFO - data_loader -   Saving features into cached file data/original/cached_goemotions_bert-base-cased_50_dev
+10/28/2023 20:55:40 - INFO - data_loader -   Creating features from dataset file at data/original
+10/28/2023 20:55:40 - INFO - data_loader -   LOOKING AT data/original/test.tsv
+10/28/2023 20:55:40 - INFO - data_loader -   I’m really sorry about your situation :( Although I love the names Sapphira, Cirilla, and Scarlett!	25	eecwqtt
+10/28/2023 20:55:40 - INFO - data_loader -   Well I am a lady, so that would probably just freak them out. Oh, Reddit. Everyone is a man haha. 	1	eez3kgr
+10/28/2023 20:55:41 - INFO - data_loader -   *** Example ***
+10/28/2023 20:55:41 - INFO - data_loader -   guid: test-0
+10/28/2023 20:55:41 - INFO - data_loader -   sentence: I’m really sorry about your situation :( Although I love the names Sapphira, Cirilla, and Scarlett!
+10/28/2023 20:55:41 - INFO - data_loader -   tokens: I ’ m really sorry about your situation : ( Although I love the names Sa ##pp ##hir ##a , C ##iri ##lla , and Scarlett !
+10/28/2023 20:55:41 - INFO - data_loader -   input_ids: 101 146 787 182 1541 2959 1164 1240 2820 131 113 1966 146 1567 1103 2666 17784 8661 14518 1161 117 140 17262 3848 117 1105 22991 106 102 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+10/28/2023 20:55:41 - INFO - data_loader -   attention_mask: 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+10/28/2023 20:55:41 - INFO - data_loader -   token_type_ids: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+10/28/2023 20:55:41 - INFO - data_loader -   label: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0
+10/28/2023 20:55:41 - INFO - data_loader -   *** Example ***
+10/28/2023 20:55:41 - INFO - data_loader -   guid: test-1
+10/28/2023 20:55:41 - INFO - data_loader -   sentence: It's wonderful because it's awful. At not with.
+10/28/2023 20:55:41 - INFO - data_loader -   tokens: It ' s wonderful because it ' s awful . At not with .
+10/28/2023 20:55:41 - INFO - data_loader -   input_ids: 101 1135 112 188 7310 1272 1122 112 188 9684 119 1335 1136 1114 119 102 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+10/28/2023 20:55:41 - INFO - data_loader -   attention_mask: 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+10/28/2023 20:55:41 - INFO - data_loader -   token_type_ids: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+10/28/2023 20:55:41 - INFO - data_loader -   label: 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+10/28/2023 20:55:41 - INFO - data_loader -   *** Example ***
+10/28/2023 20:55:41 - INFO - data_loader -   guid: test-2
+10/28/2023 20:55:41 - INFO - data_loader -   sentence: Kings fan here, good luck to you guys! Will be an interesting game to watch! 
+10/28/2023 20:55:41 - INFO - data_loader -   tokens: Kings fan here , good luck to you guys ! Will be an interesting game to watch !
+10/28/2023 20:55:41 - INFO - data_loader -   input_ids: 101 6560 5442 1303 117 1363 6920 1106 1128 3713 106 3100 1129 1126 5426 1342 1106 2824 106 102 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+10/28/2023 20:55:41 - INFO - data_loader -   attention_mask: 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+10/28/2023 20:55:41 - INFO - data_loader -   token_type_ids: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+10/28/2023 20:55:41 - INFO - data_loader -   label: 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+10/28/2023 20:55:41 - INFO - data_loader -   *** Example ***
+10/28/2023 20:55:41 - INFO - data_loader -   guid: test-3
+10/28/2023 20:55:41 - INFO - data_loader -   sentence: I didn't know that, thank you for teaching me something today!
+10/28/2023 20:55:41 - INFO - data_loader -   tokens: I didn ' t know that , thank you for teaching me something today !
+10/28/2023 20:55:41 - INFO - data_loader -   input_ids: 101 146 1238 112 189 1221 1115 117 6243 1128 1111 3679 1143 1380 2052 106 102 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+10/28/2023 20:55:41 - INFO - data_loader -   attention_mask: 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+10/28/2023 20:55:41 - INFO - data_loader -   token_type_ids: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+10/28/2023 20:55:41 - INFO - data_loader -   label: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0
+10/28/2023 20:55:41 - INFO - data_loader -   *** Example ***
+10/28/2023 20:55:41 - INFO - data_loader -   guid: test-4
+10/28/2023 20:55:41 - INFO - data_loader -   sentence: They got bored from haunting earth for thousands of years and ultimately moved on to the afterlife.
+10/28/2023 20:55:41 - INFO - data_loader -   tokens: They got bored from haunting earth for thousands of years and ultimately moved on to the after ##life .
+10/28/2023 20:55:41 - INFO - data_loader -   input_ids: 101 1220 1400 11920 1121 24844 4033 1111 4674 1104 1201 1105 4444 1427 1113 1106 1103 1170 14430 119 102 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+10/28/2023 20:55:41 - INFO - data_loader -   attention_mask: 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+10/28/2023 20:55:41 - INFO - data_loader -   token_type_ids: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+10/28/2023 20:55:41 - INFO - data_loader -   label: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1
+10/28/2023 20:55:41 - INFO - data_loader -   *** Example ***
+10/28/2023 20:55:41 - INFO - data_loader -   guid: test-5
+10/28/2023 20:55:41 - INFO - data_loader -   sentence: Thank you for asking questions and recognizing that there may be things that you don’t know or understand about police tactics. Seriously. Thank you.
+10/28/2023 20:55:41 - INFO - data_loader -   tokens: Thank you for asking questions and recognizing that there may be things that you don ’ t know or understand about police tactics . Seriously . Thank you .
+10/28/2023 20:55:41 - INFO - data_loader -   input_ids: 101 4514 1128 1111 4107 3243 1105 17344 1115 1175 1336 1129 1614 1115 1128 1274 787 189 1221 1137 2437 1164 2021 10524 119 18725 119 4514 1128 119 102 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+10/28/2023 20:55:41 - INFO - data_loader -   attention_mask: 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+10/28/2023 20:55:41 - INFO - data_loader -   token_type_ids: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+10/28/2023 20:55:41 - INFO - data_loader -   label: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0
+10/28/2023 20:55:41 - INFO - data_loader -   *** Example ***
+10/28/2023 20:55:41 - INFO - data_loader -   guid: test-6
+10/28/2023 20:55:41 - INFO - data_loader -   sentence: You’re welcome
+10/28/2023 20:55:41 - INFO - data_loader -   tokens: You ’ re welcome
+10/28/2023 20:55:41 - INFO - data_loader -   input_ids: 101 1192 787 1231 7236 102 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+10/28/2023 20:55:41 - INFO - data_loader -   attention_mask: 1 1 1 1 1 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+10/28/2023 20:55:41 - INFO - data_loader -   token_type_ids: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+10/28/2023 20:55:41 - INFO - data_loader -   label: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0
+10/28/2023 20:55:41 - INFO - data_loader -   *** Example ***
+10/28/2023 20:55:41 - INFO - data_loader -   guid: test-7
+10/28/2023 20:55:41 - INFO - data_loader -   sentence: 100%! Congrats on your job too!
+10/28/2023 20:55:41 - INFO - data_loader -   tokens: 100 % ! Con ##gra ##ts on your job too !
+10/28/2023 20:55:41 - INFO - data_loader -   input_ids: 101 1620 110 106 16752 14867 2145 1113 1240 2261 1315 106 102 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+10/28/2023 20:55:41 - INFO - data_loader -   attention_mask: 1 1 1 1 1 1 1 1 1 1 1 1 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+10/28/2023 20:55:41 - INFO - data_loader -   token_type_ids: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+10/28/2023 20:55:41 - INFO - data_loader -   label: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0
+10/28/2023 20:55:41 - INFO - data_loader -   *** Example ***
+10/28/2023 20:55:41 - INFO - data_loader -   guid: test-8
+10/28/2023 20:55:41 - INFO - data_loader -   sentence: I’m sorry to hear that friend :(. It’s for the best most likely if she didn’t accept you for who you are
+10/28/2023 20:55:41 - INFO - data_loader -   tokens: I ’ m sorry to hear that friend : ( . It ’ s for the best most likely if she didn ’ t accept you for who you are
+10/28/2023 20:55:41 - INFO - data_loader -   input_ids: 101 146 787 182 2959 1106 2100 1115 1910 131 113 119 1135 787 188 1111 1103 1436 1211 2620 1191 1131 1238 787 189 4392 1128 1111 1150 1128 1132 102 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+10/28/2023 20:55:41 - INFO - data_loader -   attention_mask: 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+10/28/2023 20:55:41 - INFO - data_loader -   token_type_ids: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+10/28/2023 20:55:41 - INFO - data_loader -   label: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0
+10/28/2023 20:55:41 - INFO - data_loader -   *** Example ***
+10/28/2023 20:55:41 - INFO - data_loader -   guid: test-9
+10/28/2023 20:55:41 - INFO - data_loader -   sentence: Girlfriend weak as well, that jump was pathetic.
+10/28/2023 20:55:41 - INFO - data_loader -   tokens: Girl ##friend weak as well , that jump was pathetic .
+10/28/2023 20:55:41 - INFO - data_loader -   input_ids: 101 4537 23630 4780 1112 1218 117 1115 5152 1108 18970 119 102 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+10/28/2023 20:55:41 - INFO - data_loader -   attention_mask: 1 1 1 1 1 1 1 1 1 1 1 1 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+10/28/2023 20:55:41 - INFO - data_loader -   token_type_ids: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+10/28/2023 20:55:41 - INFO - data_loader -   label: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0
+10/28/2023 20:55:41 - INFO - data_loader -   Saving features into cached file data/original/cached_goemotions_bert-base-cased_50_test
+/u/s/a/salsabil/miniconda3/envs/proj_env/lib/python3.8/site-packages/transformers/optimization.py:411: FutureWarning: This implementation of AdamW is deprecated and will be removed in a future version. Use the PyTorch implementation torch.optim.AdamW instead, or set `no_deprecation_warning=True` to disable this warning
+  warnings.warn(
+10/28/2023 20:55:43 - INFO - __main__ -   ***** Running training *****
+10/28/2023 20:55:43 - INFO - __main__ -     Num examples = 43410
+10/28/2023 20:55:43 - INFO - __main__ -     Num Epochs = 10
+10/28/2023 20:55:43 - INFO - __main__ -     Total train batch size = 16
+10/28/2023 20:55:43 - INFO - __main__ -     Gradient Accumulation steps = 1
+10/28/2023 20:55:43 - INFO - __main__ -     Total optimization steps = 27140
+10/28/2023 20:55:43 - INFO - __main__ -     Logging steps = 1000
+10/28/2023 20:55:43 - INFO - __main__ -     Save steps = 1000
+Epoch:   0%|                                             | 0/10 [00:00<?, ?it/s10/28/2023 20:57:13 - INFO - __main__ -   ***** Running evaluation on dev dataset (1000 step) *****
+10/28/2023 20:57:13 - INFO - __main__ -     Num examples = 5426
+10/28/2023 20:57:13 - INFO - __main__ -     Eval Batch size = 32
+Evaluating: 100%|█████████████████████████████| 170/170 [00:05<00:00, 31.13it/s]
+/u/s/a/salsabil/miniconda3/envs/proj_env/lib/python3.8/site-packages/sklearn/metrics/_classification.py:1471: UndefinedMetricWarning: Precision and F-score are ill-defined and being set to 0.0 in labels with no predicted samples. Use `zero_division` parameter to control this behavior.
+  _warn_prf(average, modifier, msg_start, len(result))
+/u/s/a/salsabil/miniconda3/envs/proj_env/lib/python3.8/site-packages/sklearn/metrics/_classification.py:1471: UndefinedMetricWarning: Precision and F-score are ill-defined and being set to 0.0 in labels with no predicted samples. Use `zero_division` parameter to control this behavior.
+  _warn_prf(average, modifier, msg_start, len(result))
+10/28/2023 20:57:19 - INFO - __main__ -   ***** Eval results on dev dataset *****
+10/28/2023 20:57:19 - INFO - __main__ -     accuracy = 0.31772945079248066
+10/28/2023 20:57:19 - INFO - __main__ -     loss = 0.13785647508852622
+10/28/2023 20:57:19 - INFO - __main__ -     macro_f1 = 0.07046234494875536
+10/28/2023 20:57:19 - INFO - __main__ -     macro_precision = 0.08272142808343648
+10/28/2023 20:57:19 - INFO - __main__ -     macro_recall = 0.07121000681297511
+10/28/2023 20:57:19 - INFO - __main__ -     micro_f1 = 0.4002866502866503
+10/28/2023 20:57:19 - INFO - __main__ -     micro_precision = 0.5770365997638724
+10/28/2023 20:57:19 - INFO - __main__ -     micro_recall = 0.30642633228840127
+10/28/2023 20:57:19 - INFO - __main__ -     weighted_f1 = 0.26225224687631915
+10/28/2023 20:57:19 - INFO - __main__ -     weighted_precision = 0.26212867448790567
+10/28/2023 20:57:19 - INFO - __main__ -     weighted_recall = 0.30642633228840127
+                                                                               10/28/2023 20:57:39 - INFO - __main__ -   Saving model checkpoint to ckpt/original/bert-base-cased-goemotions-original/checkpoint-1000
+                                                                               10/28/2023 20:58:44 - INFO - __main__ -   ***** Running evaluation on dev dataset (2000 step) *****
+10/28/2023 20:58:44 - INFO - __main__ -     Num examples = 5426
+10/28/2023 20:58:44 - INFO - __main__ -     Eval Batch size = 32
+Evaluating: 100%|█████████████████████████████| 170/170 [00:05<00:00, 30.74it/s]
+/u/s/a/salsabil/miniconda3/envs/proj_env/lib/python3.8/site-packages/sklearn/metrics/_classification.py:1471: UndefinedMetricWarning: Precision and F-score are ill-defined and being set to 0.0 in labels with no predicted samples. Use `zero_division` parameter to control this behavior.
+  _warn_prf(average, modifier, msg_start, len(result))
+/u/s/a/salsabil/miniconda3/envs/proj_env/lib/python3.8/site-packages/sklearn/metrics/_classification.py:1471: UndefinedMetricWarning: Precision and F-score are ill-defined and being set to 0.0 in labels with no predicted samples. Use `zero_division` parameter to control this behavior.
+  _warn_prf(average, modifier, msg_start, len(result))
+10/28/2023 20:58:50 - INFO - __main__ -   ***** Eval results on dev dataset *****
+10/28/2023 20:58:50 - INFO - __main__ -     accuracy = 0.4174345742720236
+10/28/2023 20:58:50 - INFO - __main__ -     loss = 0.1046835419447983
+10/28/2023 20:58:50 - INFO - __main__ -     macro_f1 = 0.23935680376530985
+10/28/2023 20:58:50 - INFO - __main__ -     macro_precision = 0.2879011690002696
+10/28/2023 20:58:50 - INFO - __main__ -     macro_recall = 0.2269930393413211
+10/28/2023 20:58:50 - INFO - __main__ -     micro_f1 = 0.5277503810633911
+10/28/2023 20:58:50 - INFO - __main__ -     micro_precision = 0.61659333752357
+10/28/2023 20:58:50 - INFO - __main__ -     micro_recall = 0.46128526645768025
+10/28/2023 20:58:50 - INFO - __main__ -     weighted_f1 = 0.4370593142024368
+10/28/2023 20:58:50 - INFO - __main__ -     weighted_precision = 0.45966923740505433
+10/28/2023 20:58:50 - INFO - __main__ -     weighted_recall = 0.46128526645768025
+                                                                               10/28/2023 20:59:11 - INFO - __main__ -   Saving model checkpoint to ckpt/original/bert-base-cased-goemotions-original/checkpoint-2000
+Iteration: 100%|████████████████████████████| 2714/2714 [04:14<00:00, 10.65it/s]
+Epoch:  10%|███▌                                | 1/10 [04:14<38:12, 254.78s/it10/28/2023 21:00:17 - INFO - __main__ -   ***** Running evaluation on dev dataset (3000 step) *****
+10/28/2023 21:00:17 - INFO - __main__ -     Num examples = 5426
+10/28/2023 21:00:17 - INFO - __main__ -     Eval Batch size = 32
+Evaluating: 100%|█████████████████████████████| 170/170 [00:05<00:00, 30.62it/s]
+/u/s/a/salsabil/miniconda3/envs/proj_env/lib/python3.8/site-packages/sklearn/metrics/_classification.py:1471: UndefinedMetricWarning: Precision and F-score are ill-defined and being set to 0.0 in labels with no predicted samples. Use `zero_division` parameter to control this behavior.
+  _warn_prf(average, modifier, msg_start, len(result))
+/u/s/a/salsabil/miniconda3/envs/proj_env/lib/python3.8/site-packages/sklearn/metrics/_classification.py:1471: UndefinedMetricWarning: Precision and F-score are ill-defined and being set to 0.0 in labels with no predicted samples. Use `zero_division` parameter to control this behavior.
+  _warn_prf(average, modifier, msg_start, len(result))
+10/28/2023 21:00:22 - INFO - __main__ -   ***** Eval results on dev dataset *****
+10/28/2023 21:00:22 - INFO - __main__ -     accuracy = 0.42591227423516403
+10/28/2023 21:00:22 - INFO - __main__ -     loss = 0.09369670135133407
+10/28/2023 21:00:22 - INFO - __main__ -     macro_f1 = 0.37727849373755584
+10/28/2023 21:00:22 - INFO - __main__ -     macro_precision = 0.4381632889348756
+10/28/2023 21:00:22 - INFO - __main__ -     macro_recall = 0.3789942219298262
+10/28/2023 21:00:22 - INFO - __main__ -     micro_f1 = 0.5749940386296798
+10/28/2023 21:00:22 - INFO - __main__ -     micro_precision = 0.5832930172552814
+10/28/2023 21:00:22 - INFO - __main__ -     micro_recall = 0.5669278996865204
+10/28/2023 21:00:22 - INFO - __main__ -     weighted_f1 = 0.5344105016138504
+10/28/2023 21:00:22 - INFO - __main__ -     weighted_precision = 0.5476779569805367
+10/28/2023 21:00:22 - INFO - __main__ -     weighted_recall = 0.5669278996865204
+                                                                               10/28/2023 21:00:43 - INFO - __main__ -   Saving model checkpoint to ckpt/original/bert-base-cased-goemotions-original/checkpoint-3000
+                                                                               10/28/2023 21:01:48 - INFO - __main__ -   ***** Running evaluation on dev dataset (4000 step) *****
+10/28/2023 21:01:48 - INFO - __main__ -     Num examples = 5426
+10/28/2023 21:01:48 - INFO - __main__ -     Eval Batch size = 32
+Evaluating: 100%|█████████████████████████████| 170/170 [00:05<00:00, 30.70it/s]
+/u/s/a/salsabil/miniconda3/envs/proj_env/lib/python3.8/site-packages/sklearn/metrics/_classification.py:1471: UndefinedMetricWarning: Precision and F-score are ill-defined and being set to 0.0 in labels with no predicted samples. Use `zero_division` parameter to control this behavior.
+  _warn_prf(average, modifier, msg_start, len(result))
+/u/s/a/salsabil/miniconda3/envs/proj_env/lib/python3.8/site-packages/sklearn/metrics/_classification.py:1471: UndefinedMetricWarning: Precision and F-score are ill-defined and being set to 0.0 in labels with no predicted samples. Use `zero_division` parameter to control this behavior.
+  _warn_prf(average, modifier, msg_start, len(result))
+10/28/2023 21:01:54 - INFO - __main__ -   ***** Eval results on dev dataset *****
+10/28/2023 21:01:54 - INFO - __main__ -     accuracy = 0.44268337633615923
+10/28/2023 21:01:54 - INFO - __main__ -     loss = 0.0905462270931286
+10/28/2023 21:01:54 - INFO - __main__ -     macro_f1 = 0.4146190047759729
+10/28/2023 21:01:54 - INFO - __main__ -     macro_precision = 0.5207445061660444
+10/28/2023 21:01:54 - INFO - __main__ -     macro_recall = 0.39961100552407525
+10/28/2023 21:01:54 - INFO - __main__ -     micro_f1 = 0.585400649916779
+10/28/2023 21:01:54 - INFO - __main__ -     micro_precision = 0.5921115921115921
+10/28/2023 21:01:54 - INFO - __main__ -     micro_recall = 0.5788401253918495
+10/28/2023 21:01:54 - INFO - __main__ -     weighted_f1 = 0.5514480539789003
+10/28/2023 21:01:54 - INFO - __main__ -     weighted_precision = 0.5890678380584751
+10/28/2023 21:01:54 - INFO - __main__ -     weighted_recall = 0.5788401253918495
+                                                                               10/28/2023 21:02:16 - INFO - __main__ -   Saving model checkpoint to ckpt/original/bert-base-cased-goemotions-original/checkpoint-4000
+                                                                               10/28/2023 21:03:22 - INFO - __main__ -   ***** Running evaluation on dev dataset (5000 step) *****
+10/28/2023 21:03:22 - INFO - __main__ -     Num examples = 5426
+10/28/2023 21:03:22 - INFO - __main__ -     Eval Batch size = 32
+Evaluating: 100%|█████████████████████████████| 170/170 [00:05<00:00, 30.66it/s]
+/u/s/a/salsabil/miniconda3/envs/proj_env/lib/python3.8/site-packages/sklearn/metrics/_classification.py:1471: UndefinedMetricWarning: Precision and F-score are ill-defined and being set to 0.0 in labels with no predicted samples. Use `zero_division` parameter to control this behavior.
+  _warn_prf(average, modifier, msg_start, len(result))
+/u/s/a/salsabil/miniconda3/envs/proj_env/lib/python3.8/site-packages/sklearn/metrics/_classification.py:1471: UndefinedMetricWarning: Precision and F-score are ill-defined and being set to 0.0 in labels with no predicted samples. Use `zero_division` parameter to control this behavior.
+  _warn_prf(average, modifier, msg_start, len(result))
+10/28/2023 21:03:28 - INFO - __main__ -   ***** Eval results on dev dataset *****
+10/28/2023 21:03:28 - INFO - __main__ -     accuracy = 0.450976778474014
+10/28/2023 21:03:28 - INFO - __main__ -     loss = 0.08712645637638429
+10/28/2023 21:03:28 - INFO - __main__ -     macro_f1 = 0.43509522463996164
+10/28/2023 21:03:28 - INFO - __main__ -     macro_precision = 0.5210392941592771
+10/28/2023 21:03:28 - INFO - __main__ -     macro_recall = 0.431450891859782
+10/28/2023 21:03:28 - INFO - __main__ -     micro_f1 = 0.5962752279279981
+10/28/2023 21:03:28 - INFO - __main__ -     micro_precision = 0.5929025259569193
+10/28/2023 21:03:28 - INFO - __main__ -     micro_recall = 0.5996865203761755
+10/28/2023 21:03:28 - INFO - __main__ -     weighted_f1 = 0.5651378432481541
+10/28/2023 21:03:28 - INFO - __main__ -     weighted_precision = 0.6026850963149885
+10/28/2023 21:03:28 - INFO - __main__ -     weighted_recall = 0.5996865203761755
+                                                                               10/28/2023 21:03:51 - INFO - __main__ -   Saving model checkpoint to ckpt/original/bert-base-cased-goemotions-original/checkpoint-5000
+Iteration: 100%|████████████████████████████| 2714/2714 [04:20<00:00, 10.40it/s]
+Epoch:  20%|███████▏                            | 2/10 [08:35<34:27, 258.43s/it10/28/2023 21:04:57 - INFO - __main__ -   ***** Running evaluation on dev dataset (6000 step) *****
+10/28/2023 21:04:57 - INFO - __main__ -     Num examples = 5426
+10/28/2023 21:04:57 - INFO - __main__ -     Eval Batch size = 32
+Evaluating: 100%|█████████████████████████████| 170/170 [00:05<00:00, 30.66it/s]
+/u/s/a/salsabil/miniconda3/envs/proj_env/lib/python3.8/site-packages/sklearn/metrics/_classification.py:1471: UndefinedMetricWarning: Precision and F-score are ill-defined and being set to 0.0 in labels with no predicted samples. Use `zero_division` parameter to control this behavior.
+  _warn_prf(average, modifier, msg_start, len(result))
+/u/s/a/salsabil/miniconda3/envs/proj_env/lib/python3.8/site-packages/sklearn/metrics/_classification.py:1471: UndefinedMetricWarning: Precision and F-score are ill-defined and being set to 0.0 in labels with no predicted samples. Use `zero_division` parameter to control this behavior.
+  _warn_prf(average, modifier, msg_start, len(result))
+10/28/2023 21:05:02 - INFO - __main__ -   ***** Eval results on dev dataset *****
+10/28/2023 21:05:02 - INFO - __main__ -     accuracy = 0.4312569111684482
+10/28/2023 21:05:02 - INFO - __main__ -     loss = 0.08877747751334135
+10/28/2023 21:05:02 - INFO - __main__ -     macro_f1 = 0.46171132891983596
+10/28/2023 21:05:02 - INFO - __main__ -     macro_precision = 0.48577729214638854
+10/28/2023 21:05:02 - INFO - __main__ -     macro_recall = 0.4675257810491576
+10/28/2023 21:05:02 - INFO - __main__ -     micro_f1 = 0.5803578284573447
+10/28/2023 21:05:02 - INFO - __main__ -     micro_precision = 0.5688694866777059
+10/28/2023 21:05:02 - INFO - __main__ -     micro_recall = 0.5923197492163009
+10/28/2023 21:05:02 - INFO - __main__ -     weighted_f1 = 0.5735187517393411
+10/28/2023 21:05:02 - INFO - __main__ -     weighted_precision = 0.5733676356375508
+10/28/2023 21:05:02 - INFO - __main__ -     weighted_recall = 0.5923197492163009
+                                                                               10/28/2023 21:05:23 - INFO - __main__ -   Saving model checkpoint to ckpt/original/bert-base-cased-goemotions-original/checkpoint-6000
+                                                                               10/28/2023 21:06:32 - INFO - __main__ -   ***** Running evaluation on dev dataset (7000 step) *****
+10/28/2023 21:06:32 - INFO - __main__ -     Num examples = 5426
+10/28/2023 21:06:32 - INFO - __main__ -     Eval Batch size = 32
+Evaluating: 100%|█████████████████████████████| 170/170 [00:05<00:00, 30.47it/s]
+/u/s/a/salsabil/miniconda3/envs/proj_env/lib/python3.8/site-packages/sklearn/metrics/_classification.py:1471: UndefinedMetricWarning: Precision and F-score are ill-defined and being set to 0.0 in labels with no predicted samples. Use `zero_division` parameter to control this behavior.
+  _warn_prf(average, modifier, msg_start, len(result))
+/u/s/a/salsabil/miniconda3/envs/proj_env/lib/python3.8/site-packages/sklearn/metrics/_classification.py:1471: UndefinedMetricWarning: Precision and F-score are ill-defined and being set to 0.0 in labels with no predicted samples. Use `zero_division` parameter to control this behavior.
+  _warn_prf(average, modifier, msg_start, len(result))
+10/28/2023 21:06:38 - INFO - __main__ -   ***** Eval results on dev dataset *****
+10/28/2023 21:06:38 - INFO - __main__ -     accuracy = 0.4511610762992997
+10/28/2023 21:06:38 - INFO - __main__ -     loss = 0.08645972004708122
+10/28/2023 21:06:38 - INFO - __main__ -     macro_f1 = 0.47302453470265854
+10/28/2023 21:06:38 - INFO - __main__ -     macro_precision = 0.5011964070596509
+10/28/2023 21:06:38 - INFO - __main__ -     macro_recall = 0.4698271032579745
+10/28/2023 21:06:38 - INFO - __main__ -     micro_f1 = 0.601037851037851
+10/28/2023 21:06:38 - INFO - __main__ -     micro_precision = 0.5856632956573469
+10/28/2023 21:06:38 - INFO - __main__ -     micro_recall = 0.6172413793103448
+10/28/2023 21:06:38 - INFO - __main__ -     weighted_f1 = 0.5828975679367636
+10/28/2023 21:06:38 - INFO - __main__ -     weighted_precision = 0.573347571838683
+10/28/2023 21:06:38 - INFO - __main__ -     weighted_recall = 0.6172413793103448
+                                                                               10/28/2023 21:06:57 - INFO - __main__ -   Saving model checkpoint to ckpt/original/bert-base-cased-goemotions-original/checkpoint-7000
+                                                                               10/28/2023 21:08:06 - INFO - __main__ -   ***** Running evaluation on dev dataset (8000 step) *****
+10/28/2023 21:08:06 - INFO - __main__ -     Num examples = 5426
+10/28/2023 21:08:06 - INFO - __main__ -     Eval Batch size = 32
+Evaluating: 100%|█████████████████████████████| 170/170 [00:05<00:00, 30.47it/s]
+/u/s/a/salsabil/miniconda3/envs/proj_env/lib/python3.8/site-packages/sklearn/metrics/_classification.py:1471: UndefinedMetricWarning: Precision and F-score are ill-defined and being set to 0.0 in labels with no predicted samples. Use `zero_division` parameter to control this behavior.
+  _warn_prf(average, modifier, msg_start, len(result))
+/u/s/a/salsabil/miniconda3/envs/proj_env/lib/python3.8/site-packages/sklearn/metrics/_classification.py:1471: UndefinedMetricWarning: Precision and F-score are ill-defined and being set to 0.0 in labels with no predicted samples. Use `zero_division` parameter to control this behavior.
+  _warn_prf(average, modifier, msg_start, len(result))
+10/28/2023 21:08:11 - INFO - __main__ -   ***** Eval results on dev dataset *****
+10/28/2023 21:08:11 - INFO - __main__ -     accuracy = 0.4260965720604497
+10/28/2023 21:08:11 - INFO - __main__ -     loss = 0.08797908315763754
+10/28/2023 21:08:11 - INFO - __main__ -     macro_f1 = 0.49379961947749734
+10/28/2023 21:08:11 - INFO - __main__ -     macro_precision = 0.5193432154090724
+10/28/2023 21:08:11 - INFO - __main__ -     macro_recall = 0.5059997226469442
+10/28/2023 21:08:11 - INFO - __main__ -     micro_f1 = 0.5842444211472219
+10/28/2023 21:08:11 - INFO - __main__ -     micro_precision = 0.5593633495841698
+10/28/2023 21:08:11 - INFO - __main__ -     micro_recall = 0.6114420062695924
+10/28/2023 21:08:11 - INFO - __main__ -     weighted_f1 = 0.5837831056452951
+10/28/2023 21:08:11 - INFO - __main__ -     weighted_precision = 0.576233728432329
+10/28/2023 21:08:11 - INFO - __main__ -     weighted_recall = 0.6114420062695924
+                                                                               10/28/2023 21:08:33 - INFO - __main__ -   Saving model checkpoint to ckpt/original/bert-base-cased-goemotions-original/checkpoint-8000
+Iteration: 100%|████████████████████████████| 2714/2714 [04:23<00:00, 10.32it/s]
+Epoch:  30%|██████████▊                         | 3/10 [12:58<30:23, 260.56s/it10/28/2023 21:09:41 - INFO - __main__ -   ***** Running evaluation on dev dataset (9000 step) *****
+10/28/2023 21:09:41 - INFO - __main__ -     Num examples = 5426
+10/28/2023 21:09:41 - INFO - __main__ -     Eval Batch size = 32
+Evaluating: 100%|█████████████████████████████| 170/170 [00:05<00:00, 30.47it/s]
+/u/s/a/salsabil/miniconda3/envs/proj_env/lib/python3.8/site-packages/sklearn/metrics/_classification.py:1471: UndefinedMetricWarning: Precision and F-score are ill-defined and being set to 0.0 in labels with no predicted samples. Use `zero_division` parameter to control this behavior.
+  _warn_prf(average, modifier, msg_start, len(result))
+/u/s/a/salsabil/miniconda3/envs/proj_env/lib/python3.8/site-packages/sklearn/metrics/_classification.py:1471: UndefinedMetricWarning: Precision and F-score are ill-defined and being set to 0.0 in labels with no predicted samples. Use `zero_division` parameter to control this behavior.
+  _warn_prf(average, modifier, msg_start, len(result))
+10/28/2023 21:09:47 - INFO - __main__ -   ***** Eval results on dev dataset *****
+10/28/2023 21:09:47 - INFO - __main__ -     accuracy = 0.44028750460744565
+10/28/2023 21:09:47 - INFO - __main__ -     loss = 0.09512048668282873
+10/28/2023 21:09:47 - INFO - __main__ -     macro_f1 = 0.48385429745410613
+10/28/2023 21:09:47 - INFO - __main__ -     macro_precision = 0.518080050960598
+10/28/2023 21:09:47 - INFO - __main__ -     macro_recall = 0.4942271325507132
+10/28/2023 21:09:47 - INFO - __main__ -     micro_f1 = 0.5746418117393315
+10/28/2023 21:09:47 - INFO - __main__ -     micro_precision = 0.5649803089972736
+10/28/2023 21:09:47 - INFO - __main__ -     micro_recall = 0.5846394984326019
+10/28/2023 21:09:47 - INFO - __main__ -     weighted_f1 = 0.5694031908537008
+10/28/2023 21:09:47 - INFO - __main__ -     weighted_precision = 0.5703881423900018
+10/28/2023 21:09:47 - INFO - __main__ -     weighted_recall = 0.5846394984326019
+                                                                               10/28/2023 21:10:08 - INFO - __main__ -   Saving model checkpoint to ckpt/original/bert-base-cased-goemotions-original/checkpoint-9000
+                                                                               10/28/2023 21:11:16 - INFO - __main__ -   ***** Running evaluation on dev dataset (10000 step) *****
+10/28/2023 21:11:16 - INFO - __main__ -     Num examples = 5426
+10/28/2023 21:11:16 - INFO - __main__ -     Eval Batch size = 32
+Evaluating: 100%|█████████████████████████████| 170/170 [00:05<00:00, 30.45it/s]
+/u/s/a/salsabil/miniconda3/envs/proj_env/lib/python3.8/site-packages/sklearn/metrics/_classification.py:1471: UndefinedMetricWarning: Precision and F-score are ill-defined and being set to 0.0 in labels with no predicted samples. Use `zero_division` parameter to control this behavior.
+  _warn_prf(average, modifier, msg_start, len(result))
+/u/s/a/salsabil/miniconda3/envs/proj_env/lib/python3.8/site-packages/sklearn/metrics/_classification.py:1471: UndefinedMetricWarning: Precision and F-score are ill-defined and being set to 0.0 in labels with no predicted samples. Use `zero_division` parameter to control this behavior.
+  _warn_prf(average, modifier, msg_start, len(result))
+10/28/2023 21:11:22 - INFO - __main__ -   ***** Eval results on dev dataset *****
+10/28/2023 21:11:22 - INFO - __main__ -     accuracy = 0.4192775525248802
+10/28/2023 21:11:22 - INFO - __main__ -     loss = 0.09512973923016997
+10/28/2023 21:11:22 - INFO - __main__ -     macro_f1 = 0.48277976627915437
+10/28/2023 21:11:22 - INFO - __main__ -     macro_precision = 0.48234729832424444
+10/28/2023 21:11:22 - INFO - __main__ -     macro_recall = 0.5073180709052721
+10/28/2023 21:11:22 - INFO - __main__ -     micro_f1 = 0.5667116914302867
+10/28/2023 21:11:22 - INFO - __main__ -     micro_precision = 0.5436222286207889
+10/28/2023 21:11:22 - INFO - __main__ -     micro_recall = 0.5918495297805643
+10/28/2023 21:11:22 - INFO - __main__ -     weighted_f1 = 0.5635312105877193
+10/28/2023 21:11:22 - INFO - __main__ -     weighted_precision = 0.5507713803050449
+10/28/2023 21:11:22 - INFO - __main__ -     weighted_recall = 0.5918495297805643
+                                                                               10/28/2023 21:11:42 - INFO - __main__ -   Saving model checkpoint to ckpt/original/bert-base-cased-goemotions-original/checkpoint-10000
+Iteration: 100%|████████████████████████████| 2714/2714 [03:56<00:00, 11.46it/s]
+Epoch:  40%|██████████████▍                     | 4/10 [16:55<25:07, 251.17s/it10/28/2023 21:12:48 - INFO - __main__ -   ***** Running evaluation on dev dataset (11000 step) *****
+10/28/2023 21:12:48 - INFO - __main__ -     Num examples = 5426
+10/28/2023 21:12:48 - INFO - __main__ -     Eval Batch size = 32
+Evaluating: 100%|█████████████████████████████| 170/170 [00:05<00:00, 30.64it/s]
+/u/s/a/salsabil/miniconda3/envs/proj_env/lib/python3.8/site-packages/sklearn/metrics/_classification.py:1471: UndefinedMetricWarning: Precision and F-score are ill-defined and being set to 0.0 in labels with no predicted samples. Use `zero_division` parameter to control this behavior.
+  _warn_prf(average, modifier, msg_start, len(result))
+/u/s/a/salsabil/miniconda3/envs/proj_env/lib/python3.8/site-packages/sklearn/metrics/_classification.py:1471: UndefinedMetricWarning: Precision and F-score are ill-defined and being set to 0.0 in labels with no predicted samples. Use `zero_division` parameter to control this behavior.
+  _warn_prf(average, modifier, msg_start, len(result))
+10/28/2023 21:12:54 - INFO - __main__ -   ***** Eval results on dev dataset *****
+10/28/2023 21:12:54 - INFO - __main__ -     accuracy = 0.44213048286030227
+10/28/2023 21:12:54 - INFO - __main__ -     loss = 0.09935954072896172
+10/28/2023 21:12:54 - INFO - __main__ -     macro_f1 = 0.4865486591196227
+10/28/2023 21:12:54 - INFO - __main__ -     macro_precision = 0.4915437410363158
+10/28/2023 21:12:54 - INFO - __main__ -     macro_recall = 0.4957249528450194
+10/28/2023 21:12:54 - INFO - __main__ -     micro_f1 = 0.5779502396713079
+10/28/2023 21:12:54 - INFO - __main__ -     micro_precision = 0.5615850953718764
+10/28/2023 21:12:54 - INFO - __main__ -     micro_recall = 0.5952978056426332
+10/28/2023 21:12:54 - INFO - __main__ -     weighted_f1 = 0.5720606631024139
+10/28/2023 21:12:54 - INFO - __main__ -     weighted_precision = 0.5567765503715946
+10/28/2023 21:12:54 - INFO - __main__ -     weighted_recall = 0.5952978056426332
+                                                                               10/28/2023 21:13:16 - INFO - __main__ -   Saving model checkpoint to ckpt/original/bert-base-cased-goemotions-original/checkpoint-11000
+                                                                               10/28/2023 21:14:22 - INFO - __main__ -   ***** Running evaluation on dev dataset (12000 step) *****
+10/28/2023 21:14:22 - INFO - __main__ -     Num examples = 5426
+10/28/2023 21:14:22 - INFO - __main__ -     Eval Batch size = 32
+Evaluating: 100%|█████████████████████████████| 170/170 [00:05<00:00, 30.67it/s]
+/u/s/a/salsabil/miniconda3/envs/proj_env/lib/python3.8/site-packages/sklearn/metrics/_classification.py:1471: UndefinedMetricWarning: Precision and F-score are ill-defined and being set to 0.0 in labels with no predicted samples. Use `zero_division` parameter to control this behavior.
+  _warn_prf(average, modifier, msg_start, len(result))
+/u/s/a/salsabil/miniconda3/envs/proj_env/lib/python3.8/site-packages/sklearn/metrics/_classification.py:1471: UndefinedMetricWarning: Precision and F-score are ill-defined and being set to 0.0 in labels with no predicted samples. Use `zero_division` parameter to control this behavior.
+  _warn_prf(average, modifier, msg_start, len(result))
+10/28/2023 21:14:27 - INFO - __main__ -   ***** Eval results on dev dataset *****
+10/28/2023 21:14:27 - INFO - __main__ -     accuracy = 0.4308883155178769
+10/28/2023 21:14:27 - INFO - __main__ -     loss = 0.10529085505096351
+10/28/2023 21:14:27 - INFO - __main__ -     macro_f1 = 0.4828257975571222
+10/28/2023 21:14:27 - INFO - __main__ -     macro_precision = 0.4904919610028279
+10/28/2023 21:14:27 - INFO - __main__ -     macro_recall = 0.4975413332410122
+10/28/2023 21:14:27 - INFO - __main__ -     micro_f1 = 0.5736997501703385
+10/28/2023 21:14:27 - INFO - __main__ -     micro_precision = 0.5548396544149948
+10/28/2023 21:14:27 - INFO - __main__ -     micro_recall = 0.5938871473354232
+10/28/2023 21:14:27 - INFO - __main__ -     weighted_f1 = 0.567947200002701
+10/28/2023 21:14:27 - INFO - __main__ -     weighted_precision = 0.5516445781002901
+10/28/2023 21:14:27 - INFO - __main__ -     weighted_recall = 0.5938871473354232
+                                                                               10/28/2023 21:14:47 - INFO - __main__ -   Saving model checkpoint to ckpt/original/bert-base-cased-goemotions-original/checkpoint-12000
+                                                                               10/28/2023 21:15:53 - INFO - __main__ -   ***** Running evaluation on dev dataset (13000 step) *****
+10/28/2023 21:15:53 - INFO - __main__ -     Num examples = 5426
+10/28/2023 21:15:53 - INFO - __main__ -     Eval Batch size = 32
+Evaluating: 100%|█████████████████████████████| 170/170 [00:05<00:00, 30.64it/s]
+10/28/2023 21:15:59 - INFO - __main__ -   ***** Eval results on dev dataset *****valuating:  99%|████████████████████████████▋| 168/170 [00:05<00:00, 30.53it/s]
+10/28/2023 21:15:59 - INFO - __main__ -     accuracy = 0.4178031699225949
+10/28/2023 21:15:59 - INFO - __main__ -     loss = 0.10472071468830109
+10/28/2023 21:15:59 - INFO - __main__ -     macro_f1 = 0.48457967374464117
+10/28/2023 21:15:59 - INFO - __main__ -     macro_precision = 0.5111982449345214
+10/28/2023 21:15:59 - INFO - __main__ -     macro_recall = 0.5033497393966442
+10/28/2023 21:15:59 - INFO - __main__ -     micro_f1 = 0.566034897713598
+10/28/2023 21:15:59 - INFO - __main__ -     micro_precision = 0.5441006362058993
+10/28/2023 21:15:59 - INFO - __main__ -     micro_recall = 0.5898119122257053
+10/28/2023 21:15:59 - INFO - __main__ -     weighted_f1 = 0.5639643588071244
+10/28/2023 21:15:59 - INFO - __main__ -     weighted_precision = 0.5499882400970009
+10/28/2023 21:15:59 - INFO - __main__ -     weighted_recall = 0.5898119122257053
+                                                                               10/28/2023 21:16:19 - INFO - __main__ -   Saving model checkpoint to ckpt/original/bert-base-cased-goemotions-original/checkpoint-13000
+Iteration: 100%|████████████████████████████| 2714/2714 [04:17<00:00, 10.55it/s]
+Epoch:  50%|██████████████████                  | 5/10 [21:12<21:06, 253.37s/it10/28/2023 21:17:25 - INFO - __main__ -   ***** Running evaluation on dev dataset (14000 step) *****
+10/28/2023 21:17:25 - INFO - __main__ -     Num examples = 5426
+10/28/2023 21:17:25 - INFO - __main__ -     Eval Batch size = 32
+Evaluating: 100%|█████████████████████████████| 170/170 [00:05<00:00, 30.66it/s]
+10/28/2023 21:17:30 - INFO - __main__ -   ***** Eval results on dev dataset *****valuating:  99%|████████████████████████████▋| 168/170 [00:05<00:00, 30.55it/s]
+10/28/2023 21:17:30 - INFO - __main__ -     accuracy = 0.4213048286030225
+10/28/2023 21:17:30 - INFO - __main__ -     loss = 0.11154396367423675
+10/28/2023 21:17:30 - INFO - __main__ -     macro_f1 = 0.481481741164922
+10/28/2023 21:17:30 - INFO - __main__ -     macro_precision = 0.5038524803553057
+10/28/2023 21:17:30 - INFO - __main__ -     macro_recall = 0.5040965674729917
+10/28/2023 21:17:30 - INFO - __main__ -     micro_f1 = 0.5692911636175099
+10/28/2023 21:17:30 - INFO - __main__ -     micro_precision = 0.5396713944670692
+10/28/2023 21:17:30 - INFO - __main__ -     micro_recall = 0.6023510971786834
+10/28/2023 21:17:30 - INFO - __main__ -     weighted_f1 = 0.5656330692482625
+10/28/2023 21:17:30 - INFO - __main__ -     weighted_precision = 0.5396797410724802
+10/28/2023 21:17:30 - INFO - __main__ -     weighted_recall = 0.6023510971786834
+                                                                               10/28/2023 21:17:50 - INFO - __main__ -   Saving model checkpoint to ckpt/original/bert-base-cased-goemotions-original/checkpoint-14000
+                                                                               10/28/2023 21:18:56 - INFO - __main__ -   ***** Running evaluation on dev dataset (15000 step) *****
+10/28/2023 21:18:56 - INFO - __main__ -     Num examples = 5426
+10/28/2023 21:18:56 - INFO - __main__ -     Eval Batch size = 32
+Evaluating: 100%|█████████████████████████████| 170/170 [00:05<00:00, 30.66it/s]
+10/28/2023 21:19:02 - INFO - __main__ -   ***** Eval results on dev dataset *****valuating:  99%|████████████████████████████▋| 168/170 [00:05<00:00, 30.57it/s]
+10/28/2023 21:19:02 - INFO - __main__ -     accuracy = 0.4058238112790269
+10/28/2023 21:19:02 - INFO - __main__ -     loss = 0.1152644281001652
+10/28/2023 21:19:02 - INFO - __main__ -     macro_f1 = 0.4869745610687216
+10/28/2023 21:19:02 - INFO - __main__ -     macro_precision = 0.4786788845679784
+10/28/2023 21:19:02 - INFO - __main__ -     macro_recall = 0.5146369825093638
+10/28/2023 21:19:02 - INFO - __main__ -     micro_f1 = 0.5592002961865976
+10/28/2023 21:19:02 - INFO - __main__ -     micro_precision = 0.5299649122807017
+10/28/2023 21:19:02 - INFO - __main__ -     micro_recall = 0.5918495297805643
+10/28/2023 21:19:02 - INFO - __main__ -     weighted_f1 = 0.561044874955872
+10/28/2023 21:19:02 - INFO - __main__ -     weighted_precision = 0.5417552755058693
+10/28/2023 21:19:02 - INFO - __main__ -     weighted_recall = 0.5918495297805643
+                                                                               10/28/2023 21:19:22 - INFO - __main__ -   Saving model checkpoint to ckpt/original/bert-base-cased-goemotions-original/checkpoint-15000
+                                                                               10/28/2023 21:20:28 - INFO - __main__ -   ***** Running evaluation on dev dataset (16000 step) *****
+10/28/2023 21:20:28 - INFO - __main__ -     Num examples = 5426
+10/28/2023 21:20:28 - INFO - __main__ -     Eval Batch size = 32
+Evaluating: 100%|█████████████████████████████| 170/170 [00:05<00:00, 30.69it/s]
+/u/s/a/salsabil/miniconda3/envs/proj_env/lib/python3.8/site-packages/sklearn/metrics/_classification.py:1471: UndefinedMetricWarning: Precision and F-score are ill-defined and being set to 0.0 in labels with no predicted samples. Use `zero_division` parameter to control this behavior.
+  _warn_prf(average, modifier, msg_start, len(result))
+/u/s/a/salsabil/miniconda3/envs/proj_env/lib/python3.8/site-packages/sklearn/metrics/_classification.py:1471: UndefinedMetricWarning: Precision and F-score are ill-defined and being set to 0.0 in labels with no predicted samples. Use `zero_division` parameter to control this behavior.
+  _warn_prf(average, modifier, msg_start, len(result))
+10/28/2023 21:20:33 - INFO - __main__ -   ***** Eval results on dev dataset *****
+10/28/2023 21:20:33 - INFO - __main__ -     accuracy = 0.4181717655731662
+10/28/2023 21:20:33 - INFO - __main__ -     loss = 0.11553854065782884
+10/28/2023 21:20:33 - INFO - __main__ -     macro_f1 = 0.47551271608331147
+10/28/2023 21:20:33 - INFO - __main__ -     macro_precision = 0.4746309391224072
+10/28/2023 21:20:33 - INFO - __main__ -     macro_recall = 0.49081249363304186
+10/28/2023 21:20:33 - INFO - __main__ -     micro_f1 = 0.5612588984638441
+10/28/2023 21:20:33 - INFO - __main__ -     micro_precision = 0.5376884422110553
+10/28/2023 21:20:33 - INFO - __main__ -     micro_recall = 0.5869905956112853
+10/28/2023 21:20:33 - INFO - __main__ -     weighted_f1 = 0.5601591983876768
+10/28/2023 21:20:33 - INFO - __main__ -     weighted_precision = 0.5411986551374632
+10/28/2023 21:20:33 - INFO - __main__ -     weighted_recall = 0.5869905956112853
+                                                                               10/28/2023 21:20:53 - INFO - __main__ -   Saving model checkpoint to ckpt/original/bert-base-cased-goemotions-original/checkpoint-16000
+Iteration: 100%|████████████████████████████| 2714/2714 [04:15<00:00, 10.63it/s]
+Epoch:  60%|█████████████████████▌              | 6/10 [25:28<16:56, 254.06s/it10/28/2023 21:21:59 - INFO - __main__ -   ***** Running evaluation on dev dataset (17000 step) *****
+10/28/2023 21:21:59 - INFO - __main__ -     Num examples = 5426
+10/28/2023 21:21:59 - INFO - __main__ -     Eval Batch size = 32
+Evaluating: 100%|█████████████████████████████| 170/170 [00:05<00:00, 30.66it/s]
+10/28/2023 21:22:04 - INFO - __main__ -   ***** Eval results on dev dataset *****valuating:  99%|████████████████████████████▋| 168/170 [00:05<00:00, 30.56it/s]
+10/28/2023 21:22:04 - INFO - __main__ -     accuracy = 0.3973461113158865
+10/28/2023 21:22:04 - INFO - __main__ -     loss = 0.12356577265788526
+10/28/2023 21:22:04 - INFO - __main__ -     macro_f1 = 0.48833315578978714
+10/28/2023 21:22:04 - INFO - __main__ -     macro_precision = 0.47035194122740825
+10/28/2023 21:22:04 - INFO - __main__ -     macro_recall = 0.5243557544635078
+10/28/2023 21:22:04 - INFO - __main__ -     micro_f1 = 0.5550532302756308
+10/28/2023 21:22:04 - INFO - __main__ -     micro_precision = 0.5189528224706845
+10/28/2023 21:22:04 - INFO - __main__ -     micro_recall = 0.596551724137931
+10/28/2023 21:22:04 - INFO - __main__ -     weighted_f1 = 0.556176029177532
+10/28/2023 21:22:04 - INFO - __main__ -     weighted_precision = 0.5265454044852999
+10/28/2023 21:22:04 - INFO - __main__ -     weighted_recall = 0.596551724137931
+                                                                               10/28/2023 21:22:26 - INFO - __main__ -   Saving model checkpoint to ckpt/original/bert-base-cased-goemotions-original/checkpoint-17000
+                                                                               10/28/2023 21:23:31 - INFO - __main__ -   ***** Running evaluation on dev dataset (18000 step) *****
+10/28/2023 21:23:31 - INFO - __main__ -     Num examples = 5426
+10/28/2023 21:23:31 - INFO - __main__ -     Eval Batch size = 32
+Evaluating: 100%|█████████████████████████████| 170/170 [00:05<00:00, 30.68it/s]
+10/28/2023 21:23:37 - INFO - __main__ -   ***** Eval results on dev dataset *****valuating:  99%|████████████████████████████▋| 168/170 [00:05<00:00, 30.61it/s]
+10/28/2023 21:23:37 - INFO - __main__ -     accuracy = 0.40398083302617027
+10/28/2023 21:23:37 - INFO - __main__ -     loss = 0.12518820433932193
+10/28/2023 21:23:37 - INFO - __main__ -     macro_f1 = 0.48573914720281136
+10/28/2023 21:23:37 - INFO - __main__ -     macro_precision = 0.46704824639314735
+10/28/2023 21:23:37 - INFO - __main__ -     macro_recall = 0.5156157479327784
+10/28/2023 21:23:37 - INFO - __main__ -     micro_f1 = 0.5592178357158729
+10/28/2023 21:23:37 - INFO - __main__ -     micro_precision = 0.5301221738519871
+10/28/2023 21:23:37 - INFO - __main__ -     micro_recall = 0.591692789968652
+10/28/2023 21:23:37 - INFO - __main__ -     weighted_f1 = 0.5597866869910139
+10/28/2023 21:23:37 - INFO - __main__ -     weighted_precision = 0.5347105886852708
+10/28/2023 21:23:37 - INFO - __main__ -     weighted_recall = 0.591692789968652
+                                                                               10/28/2023 21:23:57 - INFO - __main__ -   Saving model checkpoint to ckpt/original/bert-base-cased-goemotions-original/checkpoint-18000
+Iteration: 100%|████████████████████████████| 2714/2714 [03:51<00:00, 11.73it/s]
+Epoch:  70%|█████████████████████████▏          | 7/10 [29:19<12:19, 246.66s/it10/28/2023 21:25:03 - INFO - __main__ -   ***** Running evaluation on dev dataset (19000 step) *****
+10/28/2023 21:25:03 - INFO - __main__ -     Num examples = 5426
+10/28/2023 21:25:03 - INFO - __main__ -     Eval Batch size = 32
+Evaluating: 100%|█████████████████████████████| 170/170 [00:05<00:00, 30.67it/s]
+10/28/2023 21:25:09 - INFO - __main__ -   ***** Eval results on dev dataset *****valuating:  99%|████████████████████████████▋| 168/170 [00:05<00:00, 30.60it/s]
+10/28/2023 21:25:09 - INFO - __main__ -     accuracy = 0.412827128639882
+10/28/2023 21:25:09 - INFO - __main__ -     loss = 0.12652306284974604
+10/28/2023 21:25:09 - INFO - __main__ -     macro_f1 = 0.47234944579791543
+10/28/2023 21:25:09 - INFO - __main__ -     macro_precision = 0.4669422443028807
+10/28/2023 21:25:09 - INFO - __main__ -     macro_recall = 0.4885711215296323
+10/28/2023 21:25:09 - INFO - __main__ -     micro_f1 = 0.5586094191056307
+10/28/2023 21:25:09 - INFO - __main__ -     micro_precision = 0.5309234679469077
+10/28/2023 21:25:09 - INFO - __main__ -     micro_recall = 0.5893416927899686
+10/28/2023 21:25:09 - INFO - __main__ -     weighted_f1 = 0.5591174594576642
+10/28/2023 21:25:09 - INFO - __main__ -     weighted_precision = 0.5368269601451868
+10/28/2023 21:25:09 - INFO - __main__ -     weighted_recall = 0.5893416927899686
+10/28/2023 21:25:31 - INFO - __main__ -   Saving model checkpoint to ckpt/original/bert-base-cased-goemotions-original/checkpoint-19000
+                                                                               10/28/2023 21:26:37 - INFO - __main__ -   ***** Running evaluation on dev dataset (20000 step) *****
+10/28/2023 21:26:37 - INFO - __main__ -     Num examples = 5426
+10/28/2023 21:26:37 - INFO - __main__ -     Eval Batch size = 32
+Evaluating: 100%|█████████████████████████████| 170/170 [00:05<00:00, 30.71it/s]
+10/28/2023 21:26:43 - INFO - __main__ -   ***** Eval results on dev dataset *****valuating:  99%|████████████████████████████▋| 168/170 [00:05<00:00, 30.63it/s]
+10/28/2023 21:26:43 - INFO - __main__ -     accuracy = 0.4001105786951714
+10/28/2023 21:26:43 - INFO - __main__ -     loss = 0.13271194043404916
+10/28/2023 21:26:43 - INFO - __main__ -     macro_f1 = 0.48185605178741914
+10/28/2023 21:26:43 - INFO - __main__ -     macro_precision = 0.4589385270837366
+10/28/2023 21:26:43 - INFO - __main__ -     macro_recall = 0.5169279902985887
+10/28/2023 21:26:43 - INFO - __main__ -     micro_f1 = 0.5572723975335511
+10/28/2023 21:26:43 - INFO - __main__ -     micro_precision = 0.5187035786630655
+10/28/2023 21:26:43 - INFO - __main__ -     micro_recall = 0.602037617554859
+10/28/2023 21:26:43 - INFO - __main__ -     weighted_f1 = 0.5621651821430496
+10/28/2023 21:26:43 - INFO - __main__ -     weighted_precision = 0.5307503748257946
+10/28/2023 21:26:43 - INFO - __main__ -     weighted_recall = 0.602037617554859
+                                                                               10/28/2023 21:27:03 - INFO - __main__ -   Saving model checkpoint to ckpt/original/bert-base-cased-goemotions-original/checkpoint-20000
+                                                                               10/28/2023 21:28:09 - INFO - __main__ -   ***** Running evaluation on dev dataset (21000 step) *****
+10/28/2023 21:28:09 - INFO - __main__ -     Num examples = 5426
+10/28/2023 21:28:09 - INFO - __main__ -     Eval Batch size = 32
+Evaluating: 100%|█████████████████████████████| 170/170 [00:05<00:00, 30.70it/s]
+10/28/2023 21:28:15 - INFO - __main__ -   ***** Eval results on dev dataset *****valuating:  99%|████████████████████████████▋| 168/170 [00:05<00:00, 30.62it/s]
+10/28/2023 21:28:15 - INFO - __main__ -     accuracy = 0.391079985256174
+10/28/2023 21:28:15 - INFO - __main__ -     loss = 0.13549129362492002
+10/28/2023 21:28:15 - INFO - __main__ -     macro_f1 = 0.4856426259053198
+10/28/2023 21:28:15 - INFO - __main__ -     macro_precision = 0.4695850584783975
+10/28/2023 21:28:15 - INFO - __main__ -     macro_recall = 0.5135951587134316
+10/28/2023 21:28:15 - INFO - __main__ -     micro_f1 = 0.5579430402796999
+10/28/2023 21:28:15 - INFO - __main__ -     micro_precision = 0.5211593414069942
+10/28/2023 21:28:15 - INFO - __main__ -     micro_recall = 0.6003134796238244
+10/28/2023 21:28:15 - INFO - __main__ -     weighted_f1 = 0.5615864823403653
+10/28/2023 21:28:15 - INFO - __main__ -     weighted_precision = 0.5311546106164579
+10/28/2023 21:28:15 - INFO - __main__ -     weighted_recall = 0.6003134796238244
+                                                                               10/28/2023 21:28:36 - INFO - __main__ -   Saving model checkpoint to ckpt/original/bert-base-cased-goemotions-original/checkpoint-21000
+Iteration: 100%|████████████████████████████| 2714/2714 [04:19<00:00, 10.44it/s]
+Epoch:  80%|████████████████████████████▊       | 8/10 [33:39<08:21, 250.88s/it10/28/2023 21:29:42 - INFO - __main__ -   ***** Running evaluation on dev dataset (22000 step) *****
+10/28/2023 21:29:42 - INFO - __main__ -     Num examples = 5426
+10/28/2023 21:29:42 - INFO - __main__ -     Eval Batch size = 32
+Evaluating: 100%|█████████████████████████████| 170/170 [00:05<00:00, 30.69it/s]
+10/28/2023 21:29:48 - INFO - __main__ -   ***** Eval results on dev dataset *****valuating:  99%|████████████████████████████▋| 168/170 [00:05<00:00, 30.59it/s]
+10/28/2023 21:29:48 - INFO - __main__ -     accuracy = 0.3991890895687431
+10/28/2023 21:29:48 - INFO - __main__ -     loss = 0.13792226397815874
+10/28/2023 21:29:48 - INFO - __main__ -     macro_f1 = 0.4843602614227565
+10/28/2023 21:29:48 - INFO - __main__ -     macro_precision = 0.4679977177168467
+10/28/2023 21:29:48 - INFO - __main__ -     macro_recall = 0.5106001877084437
+10/28/2023 21:29:48 - INFO - __main__ -     micro_f1 = 0.5588985211626721
+10/28/2023 21:29:48 - INFO - __main__ -     micro_precision = 0.5221178712399619
+10/28/2023 21:29:48 - INFO - __main__ -     micro_recall = 0.6012539184952979
+10/28/2023 21:29:48 - INFO - __main__ -     weighted_f1 = 0.5619334866906844
+10/28/2023 21:29:48 - INFO - __main__ -     weighted_precision = 0.5312333766432703
+10/28/2023 21:29:48 - INFO - __main__ -     weighted_recall = 0.6012539184952979
+                                                                               10/28/2023 21:30:10 - INFO - __main__ -   Saving model checkpoint to ckpt/original/bert-base-cased-goemotions-original/checkpoint-22000
+                                                                               10/28/2023 21:31:16 - INFO - __main__ -   ***** Running evaluation on dev dataset (23000 step) *****
+10/28/2023 21:31:16 - INFO - __main__ -     Num examples = 5426
+10/28/2023 21:31:16 - INFO - __main__ -     Eval Batch size = 32
+Evaluating: 100%|█████████████████████████████| 170/170 [00:05<00:00, 30.71it/s]
+10/28/2023 21:31:21 - INFO - __main__ -   ***** Eval results on dev dataset *****valuating:  99%|████████████████████████████▋| 168/170 [00:05<00:00, 30.61it/s]
+10/28/2023 21:31:21 - INFO - __main__ -     accuracy = 0.41043125691116844
+10/28/2023 21:31:21 - INFO - __main__ -     loss = 0.14181186451631433
+10/28/2023 21:31:21 - INFO - __main__ -     macro_f1 = 0.4780123886801663
+10/28/2023 21:31:21 - INFO - __main__ -     macro_precision = 0.4710928965521063
+10/28/2023 21:31:21 - INFO - __main__ -     macro_recall = 0.49744367249268145
+10/28/2023 21:31:21 - INFO - __main__ -     micro_f1 = 0.5619335347432025
+10/28/2023 21:31:21 - INFO - __main__ -     micro_precision = 0.5302461410095953
+10/28/2023 21:31:21 - INFO - __main__ -     micro_recall = 0.5976489028213167
+10/28/2023 21:31:21 - INFO - __main__ -     weighted_f1 = 0.5602096303325753
+10/28/2023 21:31:21 - INFO - __main__ -     weighted_precision = 0.5304415116954199
+10/28/2023 21:31:21 - INFO - __main__ -     weighted_recall = 0.5976489028213167
+                                                                               10/28/2023 21:31:42 - INFO - __main__ -   Saving model checkpoint to ckpt/original/bert-base-cased-goemotions-original/checkpoint-23000
+                                                                               10/28/2023 21:32:48 - INFO - __main__ -   ***** Running evaluation on dev dataset (24000 step) *****
+10/28/2023 21:32:48 - INFO - __main__ -     Num examples = 5426
+10/28/2023 21:32:48 - INFO - __main__ -     Eval Batch size = 32
+Evaluating: 100%|█████████████████████████████| 170/170 [00:05<00:00, 30.69it/s]
+10/28/2023 21:32:54 - INFO - __main__ -   ***** Eval results on dev dataset *****valuating:  99%|████████████████████████████▋| 168/170 [00:05<00:00, 30.60it/s]
+10/28/2023 21:32:54 - INFO - __main__ -     accuracy = 0.39882049391817176
+10/28/2023 21:32:54 - INFO - __main__ -     loss = 0.14293817031909437
+10/28/2023 21:32:54 - INFO - __main__ -     macro_f1 = 0.48398071850936636
+10/28/2023 21:32:54 - INFO - __main__ -     macro_precision = 0.4605727608235765
+10/28/2023 21:32:54 - INFO - __main__ -     macro_recall = 0.519278126484337
+10/28/2023 21:32:54 - INFO - __main__ -     micro_f1 = 0.5572890211160294
+10/28/2023 21:32:54 - INFO - __main__ -     micro_precision = 0.5188488042156465
+10/28/2023 21:32:54 - INFO - __main__ -     micro_recall = 0.6018808777429467
+10/28/2023 21:32:54 - INFO - __main__ -     weighted_f1 = 0.5598650366223948
+10/28/2023 21:32:54 - INFO - __main__ -     weighted_precision = 0.5262658230826476
+10/28/2023 21:32:54 - INFO - __main__ -     weighted_recall = 0.6018808777429467
+                                                                               10/28/2023 21:33:19 - INFO - __main__ -   Saving model checkpoint to ckpt/original/bert-base-cased-goemotions-original/checkpoint-24000
+Iteration: 100%|████████████████████████████| 2714/2714 [04:23<00:00, 10.30it/s]
+Epoch:  90%|████████████████████████████████▍   | 9/10 [38:03<04:14, 254.85s/it10/28/2023 21:34:24 - INFO - __main__ -   ***** Running evaluation on dev dataset (25000 step) *****
+10/28/2023 21:34:24 - INFO - __main__ -     Num examples = 5426
+10/28/2023 21:34:24 - INFO - __main__ -     Eval Batch size = 32
+Evaluating: 100%|█████████████████████████████| 170/170 [00:05<00:00, 30.71it/s]
+10/28/2023 21:34:30 - INFO - __main__ -   ***** Eval results on dev dataset *****valuating:  99%|████████████████████████████▋| 168/170 [00:05<00:00, 30.62it/s]
+10/28/2023 21:34:30 - INFO - __main__ -     accuracy = 0.40416513085145594
+10/28/2023 21:34:30 - INFO - __main__ -     loss = 0.1446300674448995
+10/28/2023 21:34:30 - INFO - __main__ -     macro_f1 = 0.48419723746417914
+10/28/2023 21:34:30 - INFO - __main__ -     macro_precision = 0.46736167262145895
+10/28/2023 21:34:30 - INFO - __main__ -     macro_recall = 0.5110505087370523
+10/28/2023 21:34:30 - INFO - __main__ -     micro_f1 = 0.561518802482658
+10/28/2023 21:34:30 - INFO - __main__ -     micro_precision = 0.5256322624743678
+10/28/2023 21:34:30 - INFO - __main__ -     micro_recall = 0.6026645768025078
+10/28/2023 21:34:30 - INFO - __main__ -     weighted_f1 = 0.5630163105703785
+10/28/2023 21:34:30 - INFO - __main__ -     weighted_precision = 0.53058982363474
+10/28/2023 21:34:30 - INFO - __main__ -     weighted_recall = 0.6026645768025078
+                                                                               10/28/2023 21:34:51 - INFO - __main__ -   Saving model checkpoint to ckpt/original/bert-base-cased-goemotions-original/checkpoint-25000
+                                                                               10/28/2023 21:35:57 - INFO - __main__ -   ***** Running evaluation on dev dataset (26000 step) *****
+10/28/2023 21:35:57 - INFO - __main__ -     Num examples = 5426
+10/28/2023 21:35:57 - INFO - __main__ -     Eval Batch size = 32
+Evaluating: 100%|█████████████████████████████| 170/170 [00:05<00:00, 30.68it/s]
+10/28/2023 21:36:03 - INFO - __main__ -   ***** Eval results on dev dataset *****valuating:  99%|████████████████████████████▋| 168/170 [00:05<00:00, 30.58it/s]
+10/28/2023 21:36:03 - INFO - __main__ -     accuracy = 0.4015849612974567
+10/28/2023 21:36:03 - INFO - __main__ -     loss = 0.14750735303934884
+10/28/2023 21:36:03 - INFO - __main__ -     macro_f1 = 0.4829498906859378
+10/28/2023 21:36:03 - INFO - __main__ -     macro_precision = 0.4640163526437174
+10/28/2023 21:36:03 - INFO - __main__ -     macro_recall = 0.5121916156208697
+10/28/2023 21:36:03 - INFO - __main__ -     micro_f1 = 0.563137941090697
+10/28/2023 21:36:03 - INFO - __main__ -     micro_precision = 0.5264449291166848
+10/28/2023 21:36:03 - INFO - __main__ -     micro_recall = 0.6053291536050157
+10/28/2023 21:36:03 - INFO - __main__ -     weighted_f1 = 0.5629697435135702
+10/28/2023 21:36:03 - INFO - __main__ -     weighted_precision = 0.528501419891173
+10/28/2023 21:36:03 - INFO - __main__ -     weighted_recall = 0.6053291536050157
+                                                                               10/28/2023 21:36:25 - INFO - __main__ -   Saving model checkpoint to ckpt/original/bert-base-cased-goemotions-original/checkpoint-26000
+                                                                                10/28/2023 21:37:31 - INFO - __main__ -   ***** Running evaluation on dev dataset (27000 step) *****12it/s]
+10/28/2023 21:37:31 - INFO - __main__ -     Num examples = 5426
+10/28/2023 21:37:31 - INFO - __main__ -     Eval Batch size = 32
+Evaluating: 100%|████████████████████████████████████████████████████████| 170/170 [00:05<00:00, 30.69it/s]
+10/28/2023 21:37:36 - INFO - __main__ -   ***** Eval results on dev dataset *****
+10/28/2023 21:37:36 - INFO - __main__ -     accuracy = 0.4043494286767416| 168/170 [00:05<00:00, 30.59it/s]
+10/28/2023 21:37:36 - INFO - __main__ -     loss = 0.1474673289586516
+10/28/2023 21:37:36 - INFO - __main__ -     macro_f1 = 0.48302367394184964
+10/28/2023 21:37:36 - INFO - __main__ -     macro_precision = 0.4625376858024209
+10/28/2023 21:37:36 - INFO - __main__ -     macro_recall = 0.5133421133275318
+10/28/2023 21:37:36 - INFO - __main__ -     micro_f1 = 0.5638375309360898
+10/28/2023 21:37:36 - INFO - __main__ -     micro_precision = 0.5263658602881218
+10/28/2023 21:37:36 - INFO - __main__ -     micro_recall = 0.6070532915360501
+10/28/2023 21:37:36 - INFO - __main__ -     weighted_f1 = 0.5645276489861577
+10/28/2023 21:37:36 - INFO - __main__ -     weighted_precision = 0.5292255729714472
+10/28/2023 21:37:36 - INFO - __main__ -     weighted_recall = 0.6070532915360501
+                                                                                10/28/2023 21:37:56 - INFO - __main__ -   Saving model checkpoint to ckpt/original/bert-base-cased-goemotions-original/checkpoint-27000
+Iteration: 100%|████████████████████████████| 2714/2714 [04:18<00:00, 10.48it/s]
+Epoch: 100%|███████████████████████████████████| 10/10 [42:22<00:00, 254.22s/it]
+10/28/2023 21:38:05 - INFO - __main__ -    global_step = 27140, average loss = 0.05082739981531074
+10/28/2023 21:38:05 - INFO - __main__ -   Evaluate the following checkpoints: ['ckpt/original/bert-base-cased-goemotions-original/checkpoint-1000', 'ckpt/original/bert-base-cased-goemotions-original/checkpoint-10000', 'ckpt/original/bert-base-cased-goemotions-original/checkpoint-11000', 'ckpt/original/bert-base-cased-goemotions-original/checkpoint-12000', 'ckpt/original/bert-base-cased-goemotions-original/checkpoint-13000', 'ckpt/original/bert-base-cased-goemotions-original/checkpoint-14000', 'ckpt/original/bert-base-cased-goemotions-original/checkpoint-15000', 'ckpt/original/bert-base-cased-goemotions-original/checkpoint-16000', 'ckpt/original/bert-base-cased-goemotions-original/checkpoint-17000', 'ckpt/original/bert-base-cased-goemotions-original/checkpoint-18000', 'ckpt/original/bert-base-cased-goemotions-original/checkpoint-19000', 'ckpt/original/bert-base-cased-goemotions-original/checkpoint-2000', 'ckpt/original/bert-base-cased-goemotions-original/checkpoint-20000', 'ckpt/original/bert-base-cased-goemotions-original/checkpoint-21000', 'ckpt/original/bert-base-cased-goemotions-original/checkpoint-22000', 'ckpt/original/bert-base-cased-goemotions-original/checkpoint-23000', 'ckpt/original/bert-base-cased-goemotions-original/checkpoint-24000', 'ckpt/original/bert-base-cased-goemotions-original/checkpoint-25000', 'ckpt/original/bert-base-cased-goemotions-original/checkpoint-26000', 'ckpt/original/bert-base-cased-goemotions-original/checkpoint-27000', 'ckpt/original/bert-base-cased-goemotions-original/checkpoint-3000', 'ckpt/original/bert-base-cased-goemotions-original/checkpoint-4000', 'ckpt/original/bert-base-cased-goemotions-original/checkpoint-5000', 'ckpt/original/bert-base-cased-goemotions-original/checkpoint-6000', 'ckpt/original/bert-base-cased-goemotions-original/checkpoint-7000', 'ckpt/original/bert-base-cased-goemotions-original/checkpoint-8000', 'ckpt/original/bert-base-cased-goemotions-original/checkpoint-9000']
+10/28/2023 21:38:07 - INFO - __main__ -   ***** Running evaluation on test dataset (1000 step) *****
+10/28/2023 21:38:07 - INFO - __main__ -     Num examples = 5427
+10/28/2023 21:38:07 - INFO - __main__ -     Eval Batch size = 32
+Evaluating: 100%|████████████████████████████████████████████████████████| 170/170 [00:05<00:00, 31.04it/s]
+/u/s/a/salsabil/miniconda3/envs/proj_env/lib/python3.8/site-packages/sklearn/metrics/_classification.py:1471: UndefinedMetricWarning: Precision and F-score are ill-defined and being set to 0.0 in labels with no predicted samples. Use `zero_division` parameter to control this behavior.
+  _warn_prf(average, modifier, msg_start, len(result))
+/u/s/a/salsabil/miniconda3/envs/proj_env/lib/python3.8/site-packages/sklearn/metrics/_classification.py:1471: UndefinedMetricWarning: Precision and F-score are ill-defined and being set to 0.0 in labels with no predicted samples. Use `zero_division` parameter to control this behavior.
+  _warn_prf(average, modifier, msg_start, len(result))
+10/28/2023 21:38:12 - INFO - __main__ -   ***** Eval results on test dataset *****
+10/28/2023 21:38:12 - INFO - __main__ -     accuracy = 0.31306430808918373
+10/28/2023 21:38:12 - INFO - __main__ -     loss = 0.13705936797401486
+10/28/2023 21:38:12 - INFO - __main__ -     macro_f1 = 0.06694812027396833
+10/28/2023 21:38:12 - INFO - __main__ -     macro_precision = 0.07857373487118056
+10/28/2023 21:38:12 - INFO - __main__ -     macro_recall = 0.06924121775179014
+10/28/2023 21:38:12 - INFO - __main__ -     micro_f1 = 0.39655525938076686
+10/28/2023 21:38:12 - INFO - __main__ -     micro_precision = 0.5646715328467153
+10/28/2023 21:38:12 - INFO - __main__ -     micro_recall = 0.3055775003950071
+10/28/2023 21:38:12 - INFO - __main__ -     weighted_f1 = 0.2576035517790253
+10/28/2023 21:38:12 - INFO - __main__ -     weighted_precision = 0.2572989909694604
+10/28/2023 21:38:12 - INFO - __main__ -     weighted_recall = 0.3055775003950071
+10/28/2023 21:38:13 - INFO - __main__ -   ***** Running evaluation on test dataset (10000 step) *****
+10/28/2023 21:38:13 - INFO - __main__ -     Num examples = 5427
+10/28/2023 21:38:13 - INFO - __main__ -     Eval Batch size = 32
+Evaluating: 100%|████████████████████████████████████████████████████████| 170/170 [00:05<00:00, 31.05it/s]
+/u/s/a/salsabil/miniconda3/envs/proj_env/lib/python3.8/site-packages/sklearn/metrics/_classification.py:1471: UndefinedMetricWarning: Precision and F-score are ill-defined and being set to 0.0 in labels with no predicted samples. Use `zero_division` parameter to control this behavior.
+  _warn_prf(average, modifier, msg_start, len(result))
+/u/s/a/salsabil/miniconda3/envs/proj_env/lib/python3.8/site-packages/sklearn/metrics/_classification.py:1471: UndefinedMetricWarning: Precision and F-score are ill-defined and being set to 0.0 in labels with no predicted samples. Use `zero_division` parameter to control this behavior.
+  _warn_prf(average, modifier, msg_start, len(result))
+10/28/2023 21:38:19 - INFO - __main__ -   ***** Eval results on test dataset *****
+10/28/2023 21:38:19 - INFO - __main__ -     accuracy = 0.43173023770038693
+10/28/2023 21:38:19 - INFO - __main__ -     loss = 0.09337620397700983
+10/28/2023 21:38:19 - INFO - __main__ -     macro_f1 = 0.48311632843543234
+10/28/2023 21:38:19 - INFO - __main__ -     macro_precision = 0.4764368210983683
+10/28/2023 21:38:19 - INFO - __main__ -     macro_recall = 0.513837487868709
+10/28/2023 21:38:19 - INFO - __main__ -     micro_f1 = 0.5748512016876366
+10/28/2023 21:38:19 - INFO - __main__ -     micro_precision = 0.5493951612903226
+10/28/2023 21:38:19 - INFO - __main__ -     micro_recall = 0.602780850055301
+10/28/2023 21:38:19 - INFO - __main__ -     weighted_f1 = 0.5736774202320526
+10/28/2023 21:38:19 - INFO - __main__ -     weighted_precision = 0.5582843518904711
+10/28/2023 21:38:19 - INFO - __main__ -     weighted_recall = 0.602780850055301
+10/28/2023 21:38:20 - INFO - __main__ -   ***** Running evaluation on test dataset (11000 step) *****
+10/28/2023 21:38:20 - INFO - __main__ -     Num examples = 5427
+10/28/2023 21:38:20 - INFO - __main__ -     Eval Batch size = 32
+Evaluating: 100%|████████████████████████████████████████████████████████| 170/170 [00:05<00:00, 31.02it/s]
+/u/s/a/salsabil/miniconda3/envs/proj_env/lib/python3.8/site-packages/sklearn/metrics/_classification.py:1471: UndefinedMetricWarning: Precision and F-score are ill-defined and being set to 0.0 in labels with no predicted samples. Use `zero_division` parameter to control this behavior.
+  _warn_prf(average, modifier, msg_start, len(result))
+/u/s/a/salsabil/miniconda3/envs/proj_env/lib/python3.8/site-packages/sklearn/metrics/_classification.py:1471: UndefinedMetricWarning: Precision and F-score are ill-defined and being set to 0.0 in labels with no predicted samples. Use `zero_division` parameter to control this behavior.
+  _warn_prf(average, modifier, msg_start, len(result))
+10/28/2023 21:38:25 - INFO - __main__ -   ***** Eval results on test dataset *****
+10/28/2023 21:38:25 - INFO - __main__ -     accuracy = 0.44131195872489404
+10/28/2023 21:38:25 - INFO - __main__ -     loss = 0.09792949695359258
+10/28/2023 21:38:25 - INFO - __main__ -     macro_f1 = 0.4838308865446937
+10/28/2023 21:38:25 - INFO - __main__ -     macro_precision = 0.4866097725375882
+10/28/2023 21:38:25 - INFO - __main__ -     macro_recall = 0.49822989974499604
+10/28/2023 21:38:25 - INFO - __main__ -     micro_f1 = 0.5825523809523809
+10/28/2023 21:38:25 - INFO - __main__ -     micro_precision = 0.5625367863449088
+10/28/2023 21:38:25 - INFO - __main__ -     micro_recall = 0.6040448728077106
+10/28/2023 21:38:25 - INFO - __main__ -     weighted_f1 = 0.577932000378285
+10/28/2023 21:38:25 - INFO - __main__ -     weighted_precision = 0.560136430718069
+10/28/2023 21:38:25 - INFO - __main__ -     weighted_recall = 0.6040448728077106
+10/28/2023 21:38:26 - INFO - __main__ -   ***** Running evaluation on test dataset (12000 step) *****
+10/28/2023 21:38:26 - INFO - __main__ -     Num examples = 5427
+10/28/2023 21:38:26 - INFO - __main__ -     Eval Batch size = 32
+Evaluating: 100%|████████████████████████████████████████████████████████| 170/170 [00:05<00:00, 31.00it/s]
+/u/s/a/salsabil/miniconda3/envs/proj_env/lib/python3.8/site-packages/sklearn/metrics/_classification.py:1471: UndefinedMetricWarning: Precision and F-score are ill-defined and being set to 0.0 in labels with no predicted samples. Use `zero_division` parameter to control this behavior.
+  _warn_prf(average, modifier, msg_start, len(result))
+/u/s/a/salsabil/miniconda3/envs/proj_env/lib/python3.8/site-packages/sklearn/metrics/_classification.py:1471: UndefinedMetricWarning: Precision and F-score are ill-defined and being set to 0.0 in labels with no predicted samples. Use `zero_division` parameter to control this behavior.
+  _warn_prf(average, modifier, msg_start, len(result))
+10/28/2023 21:38:32 - INFO - __main__ -   ***** Eval results on test dataset *****
+10/28/2023 21:38:32 - INFO - __main__ -     accuracy = 0.4313617099686751
+10/28/2023 21:38:32 - INFO - __main__ -     loss = 0.1031233228962211
+10/28/2023 21:38:32 - INFO - __main__ -     macro_f1 = 0.4792452996295503
+10/28/2023 21:38:32 - INFO - __main__ -     macro_precision = 0.4773395470299936
+10/28/2023 21:38:32 - INFO - __main__ -     macro_recall = 0.5028237301064485
+10/28/2023 21:38:32 - INFO - __main__ -     micro_f1 = 0.5765533943843184
+10/28/2023 21:38:32 - INFO - __main__ -     micro_precision = 0.5533120278907612
+10/28/2023 21:38:32 - INFO - __main__ -     micro_recall = 0.6018328329909939
+10/28/2023 21:38:32 - INFO - __main__ -     weighted_f1 = 0.5729414540393616
+10/28/2023 21:38:32 - INFO - __main__ -     weighted_precision = 0.5525398890034013
+10/28/2023 21:38:32 - INFO - __main__ -     weighted_recall = 0.6018328329909939
+10/28/2023 21:38:33 - INFO - __main__ -   ***** Running evaluation on test dataset (13000 step) *****
+10/28/2023 21:38:33 - INFO - __main__ -     Num examples = 5427
+10/28/2023 21:38:33 - INFO - __main__ -     Eval Batch size = 32
+Evaluating: 100%|████████████████████████████████████████████████████████| 170/170 [00:05<00:00, 30.93it/s]
+/u/s/a/salsabil/miniconda3/envs/proj_env/lib/python3.8/site-packages/sklearn/metrics/_classification.py:1471: UndefinedMetricWarning: Precision and F-score are ill-defined and being set to 0.0 in labels with no predicted samples. Use `zero_division` parameter to control this behavior.
+  _warn_prf(average, modifier, msg_start, len(result))
+/u/s/a/salsabil/miniconda3/envs/proj_env/lib/python3.8/site-packages/sklearn/metrics/_classification.py:1471: UndefinedMetricWarning: Precision and F-score are ill-defined and being set to 0.0 in labels with no predicted samples. Use `zero_division` parameter to control this behavior.
+  _warn_prf(average, modifier, msg_start, len(result))
+10/28/2023 21:38:38 - INFO - __main__ -   ***** Eval results on test dataset *****
+10/28/2023 21:38:38 - INFO - __main__ -     accuracy = 0.41938455868804125
+10/28/2023 21:38:38 - INFO - __main__ -     loss = 0.10253519821254646
+10/28/2023 21:38:38 - INFO - __main__ -     macro_f1 = 0.4846163993973623
+10/28/2023 21:38:38 - INFO - __main__ -     macro_precision = 0.4877501901486458
+10/28/2023 21:38:38 - INFO - __main__ -     macro_recall = 0.510539336872565
+10/28/2023 21:38:38 - INFO - __main__ -     micro_f1 = 0.5700352614599744
+10/28/2023 21:38:38 - INFO - __main__ -     micro_precision = 0.5427142857142857
+10/28/2023 21:38:38 - INFO - __main__ -     micro_recall = 0.6002528045504819
+10/28/2023 21:38:38 - INFO - __main__ -     weighted_f1 = 0.5695040761108336
+10/28/2023 21:38:38 - INFO - __main__ -     weighted_precision = 0.5493796281542003
+10/28/2023 21:38:38 - INFO - __main__ -     weighted_recall = 0.6002528045504819
+10/28/2023 21:38:39 - INFO - __main__ -   ***** Running evaluation on test dataset (14000 step) *****
+10/28/2023 21:38:39 - INFO - __main__ -     Num examples = 5427
+10/28/2023 21:38:39 - INFO - __main__ -     Eval Batch size = 32
+Evaluating: 100%|████████████████████████████████████████████████████████| 170/170 [00:05<00:00, 30.88it/s]
+/u/s/a/salsabil/miniconda3/envs/proj_env/lib/python3.8/site-packages/sklearn/metrics/_classification.py:1471: UndefinedMetricWarning: Precision and F-score are ill-defined and being set to 0.0 in labels with no predicted samples. Use `zero_division` parameter to control this behavior.
+  _warn_prf(average, modifier, msg_start, len(result))
+/u/s/a/salsabil/miniconda3/envs/proj_env/lib/python3.8/site-packages/sklearn/metrics/_classification.py:1471: UndefinedMetricWarning: Precision and F-score are ill-defined and being set to 0.0 in labels with no predicted samples. Use `zero_division` parameter to control this behavior.
+  _warn_prf(average, modifier, msg_start, len(result))
+10/28/2023 21:38:45 - INFO - __main__ -   ***** Eval results on test dataset *****
+10/28/2023 21:38:45 - INFO - __main__ -     accuracy = 0.41956882255389716
+10/28/2023 21:38:45 - INFO - __main__ -     loss = 0.10929758333984543
+10/28/2023 21:38:45 - INFO - __main__ -     macro_f1 = 0.48668775408617326
+10/28/2023 21:38:45 - INFO - __main__ -     macro_precision = 0.4749538233030591
+10/28/2023 21:38:45 - INFO - __main__ -     macro_recall = 0.5209563614875597
+10/28/2023 21:38:45 - INFO - __main__ -     micro_f1 = 0.5743188362991951
+10/28/2023 21:38:45 - INFO - __main__ -     micro_precision = 0.539090657055725
+10/28/2023 21:38:45 - INFO - __main__ -     micro_recall = 0.6144730605150893
+10/28/2023 21:38:45 - INFO - __main__ -     weighted_f1 = 0.5728323151787765
+10/28/2023 21:38:45 - INFO - __main__ -     weighted_precision = 0.5406538800486853
+10/28/2023 21:38:45 - INFO - __main__ -     weighted_recall = 0.6144730605150893
+10/28/2023 21:38:46 - INFO - __main__ -   ***** Running evaluation on test dataset (15000 step) *****
+10/28/2023 21:38:46 - INFO - __main__ -     Num examples = 5427
+10/28/2023 21:38:46 - INFO - __main__ -     Eval Batch size = 32
+Evaluating: 100%|████████████████████████████████████████████████████████| 170/170 [00:05<00:00, 30.84it/s]
+10/28/2023 21:38:52 - INFO - __main__ -   ***** Eval results on test dataset *****
+10/28/2023 21:38:52 - INFO - __main__ -     accuracy = 0.4074074074074074
+10/28/2023 21:38:52 - INFO - __main__ -     loss = 0.11318746121490703
+10/28/2023 21:38:52 - INFO - __main__ -     macro_f1 = 0.48633107413432236
+10/28/2023 21:38:52 - INFO - __main__ -     macro_precision = 0.4644686069870213
+10/28/2023 21:38:52 - INFO - __main__ -     macro_recall = 0.5233169455011837
+10/28/2023 21:38:52 - INFO - __main__ -     micro_f1 = 0.5634615384615385
+10/28/2023 21:38:52 - INFO - __main__ -     micro_precision = 0.5296898901404533
+10/28/2023 21:38:52 - INFO - __main__ -     micro_recall = 0.6018328329909939
+10/28/2023 21:38:52 - INFO - __main__ -     weighted_f1 = 0.5660415643096008
+10/28/2023 21:38:52 - INFO - __main__ -     weighted_precision = 0.5412371522739413
+10/28/2023 21:38:52 - INFO - __main__ -     weighted_recall = 0.6018328329909939
+10/28/2023 21:38:53 - INFO - __main__ -   ***** Running evaluation on test dataset (16000 step) *****
+10/28/2023 21:38:53 - INFO - __main__ -     Num examples = 5427
+10/28/2023 21:38:53 - INFO - __main__ -     Eval Batch size = 32
+Evaluating: 100%|████████████████████████████████████████████████████████| 170/170 [00:05<00:00, 30.81it/s]
+10/28/2023 21:38:58 - INFO - __main__ -   ***** Eval results on test dataset *****
+10/28/2023 21:38:58 - INFO - __main__ -     accuracy = 0.41514648977335544
+10/28/2023 21:38:58 - INFO - __main__ -     loss = 0.11370356302050984
+10/28/2023 21:38:58 - INFO - __main__ -     macro_f1 = 0.4959024969419942
+10/28/2023 21:38:58 - INFO - __main__ -     macro_precision = 0.5008569897130485
+10/28/2023 21:38:58 - INFO - __main__ -     macro_recall = 0.5097157500356337
+10/28/2023 21:38:58 - INFO - __main__ -     micro_f1 = 0.5617927002922881
+10/28/2023 21:38:58 - INFO - __main__ -     micro_precision = 0.5343598517251212
+10/28/2023 21:38:58 - INFO - __main__ -     micro_recall = 0.5921946595038711
+10/28/2023 21:38:58 - INFO - __main__ -     weighted_f1 = 0.5623152156092235
+10/28/2023 21:38:58 - INFO - __main__ -     weighted_precision = 0.5405382181717505
+10/28/2023 21:38:58 - INFO - __main__ -     weighted_recall = 0.5921946595038711
+10/28/2023 21:38:59 - INFO - __main__ -   ***** Running evaluation on test dataset (17000 step) *****
+10/28/2023 21:38:59 - INFO - __main__ -     Num examples = 5427
+10/28/2023 21:38:59 - INFO - __main__ -     Eval Batch size = 32
+Evaluating: 100%|████████████████████████████████████████████████████████| 170/170 [00:05<00:00, 30.78it/s]
+10/28/2023 21:39:05 - INFO - __main__ -   ***** Eval results on test dataset *****
+10/28/2023 21:39:05 - INFO - __main__ -     accuracy = 0.40574903261470424
+10/28/2023 21:39:05 - INFO - __main__ -     loss = 0.12183593586087227
+10/28/2023 21:39:05 - INFO - __main__ -     macro_f1 = 0.4985277716922453
+10/28/2023 21:39:05 - INFO - __main__ -     macro_precision = 0.46911888723055906
+10/28/2023 21:39:05 - INFO - __main__ -     macro_recall = 0.5466935945288073
+10/28/2023 21:39:05 - INFO - __main__ -     micro_f1 = 0.5604620558561193
+10/28/2023 21:39:05 - INFO - __main__ -     micro_precision = 0.5215675602122738
+10/28/2023 21:39:05 - INFO - __main__ -     micro_recall = 0.6056249012482224
+10/28/2023 21:39:05 - INFO - __main__ -     weighted_f1 = 0.562195528869927
+10/28/2023 21:39:05 - INFO - __main__ -     weighted_precision = 0.5328556241071902
+10/28/2023 21:39:05 - INFO - __main__ -     weighted_recall = 0.6056249012482224
+10/28/2023 21:39:06 - INFO - __main__ -   ***** Running evaluation on test dataset (18000 step) *****
+10/28/2023 21:39:06 - INFO - __main__ -     Num examples = 5427
+10/28/2023 21:39:06 - INFO - __main__ -     Eval Batch size = 32
+Evaluating: 100%|████████████████████████████████████████████████████████| 170/170 [00:05<00:00, 30.79it/s]
+10/28/2023 21:39:11 - INFO - __main__ -   ***** Eval results on test dataset *****
+10/28/2023 21:39:11 - INFO - __main__ -     accuracy = 0.41496222590749954
+10/28/2023 21:39:11 - INFO - __main__ -     loss = 0.121885684921461
+10/28/2023 21:39:11 - INFO - __main__ -     macro_f1 = 0.4891932561244029
+10/28/2023 21:39:11 - INFO - __main__ -     macro_precision = 0.458159407095904
+10/28/2023 21:39:11 - INFO - __main__ -     macro_recall = 0.5322508905026078
+10/28/2023 21:39:11 - INFO - __main__ -     micro_f1 = 0.5648922780780335
+10/28/2023 21:39:11 - INFO - __main__ -     micro_precision = 0.5314850933407634
+10/28/2023 21:39:11 - INFO - __main__ -     micro_recall = 0.602780850055301
+10/28/2023 21:39:11 - INFO - __main__ -     weighted_f1 = 0.5663037707087529
+10/28/2023 21:39:11 - INFO - __main__ -     weighted_precision = 0.5369213938289759
+10/28/2023 21:39:11 - INFO - __main__ -     weighted_recall = 0.602780850055301
+10/28/2023 21:39:12 - INFO - __main__ -   ***** Running evaluation on test dataset (19000 step) *****
+10/28/2023 21:39:12 - INFO - __main__ -     Num examples = 5427
+10/28/2023 21:39:12 - INFO - __main__ -     Eval Batch size = 32
+Evaluating: 100%|████████████████████████████████████████████████████████| 170/170 [00:05<00:00, 30.78it/s]
+10/28/2023 21:39:18 - INFO - __main__ -   ***** Eval results on test dataset *****
+10/28/2023 21:39:18 - INFO - __main__ -     accuracy = 0.41238253178551687
+10/28/2023 21:39:18 - INFO - __main__ -     loss = 0.12418916760122074
+10/28/2023 21:39:18 - INFO - __main__ -     macro_f1 = 0.504077731197891
+10/28/2023 21:39:18 - INFO - __main__ -     macro_precision = 0.48850526906844355
+10/28/2023 21:39:18 - INFO - __main__ -     macro_recall = 0.5299568987053106
+10/28/2023 21:39:18 - INFO - __main__ -     micro_f1 = 0.567943220464291
+10/28/2023 21:39:18 - INFO - __main__ -     micro_precision = 0.5336945949701264
+10/28/2023 21:39:18 - INFO - __main__ -     micro_recall = 0.606888924000632
+10/28/2023 21:39:18 - INFO - __main__ -     weighted_f1 = 0.5706571374613548
+10/28/2023 21:39:18 - INFO - __main__ -     weighted_precision = 0.542448005298425
+10/28/2023 21:39:18 - INFO - __main__ -     weighted_recall = 0.606888924000632
+10/28/2023 21:39:19 - INFO - __main__ -   ***** Running evaluation on test dataset (2000 step) *****
+10/28/2023 21:39:19 - INFO - __main__ -     Num examples = 5427
+10/28/2023 21:39:19 - INFO - __main__ -     Eval Batch size = 32
+Evaluating: 100%|████████████████████████████████████████████████████████| 170/170 [00:05<00:00, 30.68it/s]
+/u/s/a/salsabil/miniconda3/envs/proj_env/lib/python3.8/site-packages/sklearn/metrics/_classification.py:1471: UndefinedMetricWarning: Precision and F-score are ill-defined and being set to 0.0 in labels with no predicted samples. Use `zero_division` parameter to control this behavior.
+  _warn_prf(average, modifier, msg_start, len(result))
+/u/s/a/salsabil/miniconda3/envs/proj_env/lib/python3.8/site-packages/sklearn/metrics/_classification.py:1471: UndefinedMetricWarning: Precision and F-score are ill-defined and being set to 0.0 in labels with no predicted samples. Use `zero_division` parameter to control this behavior.
+  _warn_prf(average, modifier, msg_start, len(result))
+10/28/2023 21:39:24 - INFO - __main__ -   ***** Eval results on test dataset *****
+10/28/2023 21:39:24 - INFO - __main__ -     accuracy = 0.4103556292611019
+10/28/2023 21:39:24 - INFO - __main__ -     loss = 0.1037781236364561
+10/28/2023 21:39:24 - INFO - __main__ -     macro_f1 = 0.23806468140614276
+10/28/2023 21:39:24 - INFO - __main__ -     macro_precision = 0.2820002307719713
+10/28/2023 21:39:24 - INFO - __main__ -     macro_recall = 0.22635294543671994
+10/28/2023 21:39:24 - INFO - __main__ -     micro_f1 = 0.5246345425013536
+10/28/2023 21:39:24 - INFO - __main__ -     micro_precision = 0.6116137176520092
+10/28/2023 21:39:24 - INFO - __main__ -     micro_recall = 0.4593142676568178
+10/28/2023 21:39:24 - INFO - __main__ -     weighted_f1 = 0.4351077277879232
+10/28/2023 21:39:24 - INFO - __main__ -     weighted_precision = 0.45126935575571125
+10/28/2023 21:39:24 - INFO - __main__ -     weighted_recall = 0.4593142676568178
+10/28/2023 21:39:25 - INFO - __main__ -   ***** Running evaluation on test dataset (20000 step) *****
+10/28/2023 21:39:25 - INFO - __main__ -     Num examples = 5427
+10/28/2023 21:39:25 - INFO - __main__ -     Eval Batch size = 32
+Evaluating: 100%|████████████████████████████████████████████████████████| 170/170 [00:05<00:00, 30.77it/s]
+10/28/2023 21:39:31 - INFO - __main__ -   ***** Eval results on test dataset *****
+10/28/2023 21:39:31 - INFO - __main__ -     accuracy = 0.3992997973097476
+10/28/2023 21:39:31 - INFO - __main__ -     loss = 0.1306865567670149
+10/28/2023 21:39:31 - INFO - __main__ -     macro_f1 = 0.49610201827492334
+10/28/2023 21:39:31 - INFO - __main__ -     macro_precision = 0.47070567605054825
+10/28/2023 21:39:31 - INFO - __main__ -     macro_recall = 0.5357913974168551
+10/28/2023 21:39:31 - INFO - __main__ -     micro_f1 = 0.5622998544395924
+10/28/2023 21:39:31 - INFO - __main__ -     micro_precision = 0.521252192686547
+10/28/2023 21:39:31 - INFO - __main__ -     micro_recall = 0.6103649865697582
+10/28/2023 21:39:31 - INFO - __main__ -     weighted_f1 = 0.568300129627261
+10/28/2023 21:39:31 - INFO - __main__ -     weighted_precision = 0.5349539982664984
+10/28/2023 21:39:31 - INFO - __main__ -     weighted_recall = 0.6103649865697582
+10/28/2023 21:39:32 - INFO - __main__ -   ***** Running evaluation on test dataset (21000 step) *****
+10/28/2023 21:39:32 - INFO - __main__ -     Num examples = 5427
+10/28/2023 21:39:32 - INFO - __main__ -     Eval Batch size = 32
+Evaluating: 100%|████████████████████████████████████████████████████████| 170/170 [00:05<00:00, 30.75it/s]
+10/28/2023 21:39:38 - INFO - __main__ -   ***** Eval results on test dataset *****
+10/28/2023 21:39:38 - INFO - __main__ -     accuracy = 0.3970886309194767
+10/28/2023 21:39:38 - INFO - __main__ -     loss = 0.13331614482928725
+10/28/2023 21:39:38 - INFO - __main__ -     macro_f1 = 0.4860336777000073
+10/28/2023 21:39:38 - INFO - __main__ -     macro_precision = 0.47015766763772715
+10/28/2023 21:39:38 - INFO - __main__ -     macro_recall = 0.5200259555541543
+10/28/2023 21:39:38 - INFO - __main__ -     micro_f1 = 0.5629866821919802
+10/28/2023 21:39:38 - INFO - __main__ -     micro_precision = 0.521856449001619
+10/28/2023 21:39:38 - INFO - __main__ -     micro_recall = 0.6111550007900142
+10/28/2023 21:39:38 - INFO - __main__ -     weighted_f1 = 0.5666457852063133
+10/28/2023 21:39:38 - INFO - __main__ -     weighted_precision = 0.5331176559647635
+10/28/2023 21:39:38 - INFO - __main__ -     weighted_recall = 0.6111550007900142
+10/28/2023 21:39:39 - INFO - __main__ -   ***** Running evaluation on test dataset (22000 step) *****
+10/28/2023 21:39:39 - INFO - __main__ -     Num examples = 5427
+10/28/2023 21:39:39 - INFO - __main__ -     Eval Batch size = 32
+Evaluating: 100%|████████████████████████████████████████████████████████| 170/170 [00:05<00:00, 30.75it/s]
+10/28/2023 21:39:44 - INFO - __main__ -   ***** Eval results on test dataset *****
+10/28/2023 21:39:44 - INFO - __main__ -     accuracy = 0.4070388796756956
+10/28/2023 21:39:44 - INFO - __main__ -     loss = 0.1348677459446823
+10/28/2023 21:39:44 - INFO - __main__ -     macro_f1 = 0.4977617796086922
+10/28/2023 21:39:44 - INFO - __main__ -     macro_precision = 0.4772872664801099
+10/28/2023 21:39:44 - INFO - __main__ -     macro_recall = 0.5292249836306596
+10/28/2023 21:39:44 - INFO - __main__ -     micro_f1 = 0.5664866442855059
+10/28/2023 21:39:44 - INFO - __main__ -     micro_precision = 0.5263800352638004
+10/28/2023 21:39:44 - INFO - __main__ -     micro_recall = 0.6132090377626798
+10/28/2023 21:39:44 - INFO - __main__ -     weighted_f1 = 0.5708015694735603
+10/28/2023 21:39:44 - INFO - __main__ -     weighted_precision = 0.5367941365474975
+10/28/2023 21:39:44 - INFO - __main__ -     weighted_recall = 0.6132090377626798
+10/28/2023 21:39:45 - INFO - __main__ -   ***** Running evaluation on test dataset (23000 step) *****
+10/28/2023 21:39:45 - INFO - __main__ -     Num examples = 5427
+10/28/2023 21:39:45 - INFO - __main__ -     Eval Batch size = 32
+Evaluating: 100%|████████████████████████████████████████████████████████| 170/170 [00:05<00:00, 30.74it/s]
+10/28/2023 21:39:51 - INFO - __main__ -   ***** Eval results on test dataset *****
+10/28/2023 21:39:51 - INFO - __main__ -     accuracy = 0.4175419200294822
+10/28/2023 21:39:51 - INFO - __main__ -     loss = 0.13856222888126093
+10/28/2023 21:39:51 - INFO - __main__ -     macro_f1 = 0.49107589657119843
+10/28/2023 21:39:51 - INFO - __main__ -     macro_precision = 0.47964466982584675
+10/28/2023 21:39:51 - INFO - __main__ -     macro_recall = 0.5191118656686997
+10/28/2023 21:39:51 - INFO - __main__ -     micro_f1 = 0.571028381865094
+10/28/2023 21:39:51 - INFO - __main__ -     micro_precision = 0.535240464344942
+10/28/2023 21:39:51 - INFO - __main__ -     micro_recall = 0.6119450150102702
+10/28/2023 21:39:51 - INFO - __main__ -     weighted_f1 = 0.5711080613474969
+10/28/2023 21:39:51 - INFO - __main__ -     weighted_precision = 0.5387460231802469
+10/28/2023 21:39:51 - INFO - __main__ -     weighted_recall = 0.6119450150102702
+10/28/2023 21:39:52 - INFO - __main__ -   ***** Running evaluation on test dataset (24000 step) *****
+10/28/2023 21:39:52 - INFO - __main__ -     Num examples = 5427
+10/28/2023 21:39:52 - INFO - __main__ -     Eval Batch size = 32
+Evaluating: 100%|████████████████████████████████████████████████████████| 170/170 [00:05<00:00, 30.75it/s]
+10/28/2023 21:39:57 - INFO - __main__ -   ***** Eval results on test dataset *****
+10/28/2023 21:39:57 - INFO - __main__ -     accuracy = 0.3994840611756035
+10/28/2023 21:39:57 - INFO - __main__ -     loss = 0.14035747677964322
+10/28/2023 21:39:57 - INFO - __main__ -     macro_f1 = 0.49147361047092336
+10/28/2023 21:39:57 - INFO - __main__ -     macro_precision = 0.45632963299198276
+10/28/2023 21:39:57 - INFO - __main__ -     macro_recall = 0.5374139278520745
+10/28/2023 21:39:57 - INFO - __main__ -     micro_f1 = 0.5626220968092034
+10/28/2023 21:39:57 - INFO - __main__ -     micro_precision = 0.5189535504538174
+10/28/2023 21:39:57 - INFO - __main__ -     micro_recall = 0.6143150576710381
+10/28/2023 21:39:57 - INFO - __main__ -     weighted_f1 = 0.5669372858499578
+10/28/2023 21:39:57 - INFO - __main__ -     weighted_precision = 0.529286168945106
+10/28/2023 21:39:57 - INFO - __main__ -     weighted_recall = 0.6143150576710381
+10/28/2023 21:39:58 - INFO - __main__ -   ***** Running evaluation on test dataset (25000 step) *****
+10/28/2023 21:39:58 - INFO - __main__ -     Num examples = 5427
+10/28/2023 21:39:58 - INFO - __main__ -     Eval Batch size = 32
+Evaluating: 100%|████████████████████████████████████████████████████████| 170/170 [00:05<00:00, 30.73it/s]
+10/28/2023 21:40:04 - INFO - __main__ -   ***** Eval results on test dataset *****
+10/28/2023 21:40:04 - INFO - __main__ -     accuracy = 0.4094343099318224
+10/28/2023 21:40:04 - INFO - __main__ -     loss = 0.14220710054916494
+10/28/2023 21:40:04 - INFO - __main__ -     macro_f1 = 0.4987254792464304
+10/28/2023 21:40:04 - INFO - __main__ -     macro_precision = 0.47423704484798446
+10/28/2023 21:40:04 - INFO - __main__ -     macro_recall = 0.5337931351887664
+10/28/2023 21:40:04 - INFO - __main__ -     micro_f1 = 0.5687003425905679
+10/28/2023 21:40:04 - INFO - __main__ -     micro_precision = 0.5278755074424899
+10/28/2023 21:40:04 - INFO - __main__ -     micro_recall = 0.6163690946437036
+10/28/2023 21:40:04 - INFO - __main__ -     weighted_f1 = 0.5715233532743532
+10/28/2023 21:40:04 - INFO - __main__ -     weighted_precision = 0.5353705029179794
+10/28/2023 21:40:04 - INFO - __main__ -     weighted_recall = 0.6163690946437036
+10/28/2023 21:40:05 - INFO - __main__ -   ***** Running evaluation on test dataset (26000 step) *****
+10/28/2023 21:40:05 - INFO - __main__ -     Num examples = 5427
+10/28/2023 21:40:05 - INFO - __main__ -     Eval Batch size = 32
+Evaluating: 100%|████████████████████████████████████████████████████████| 170/170 [00:05<00:00, 30.73it/s]
+10/28/2023 21:40:10 - INFO - __main__ -   ***** Eval results on test dataset *****
+10/28/2023 21:40:10 - INFO - __main__ -     accuracy = 0.4105398931269578
+10/28/2023 21:40:10 - INFO - __main__ -     loss = 0.14474365106400322
+10/28/2023 21:40:10 - INFO - __main__ -     macro_f1 = 0.4945760698700074
+10/28/2023 21:40:10 - INFO - __main__ -     macro_precision = 0.46892891183754315
+10/28/2023 21:40:10 - INFO - __main__ -     macro_recall = 0.5313353492311743
+10/28/2023 21:40:10 - INFO - __main__ -     micro_f1 = 0.5699919842600015
+10/28/2023 21:40:10 - INFO - __main__ -     micro_precision = 0.5289423857181499
+10/28/2023 21:40:10 - INFO - __main__ -     micro_recall = 0.6179491230842156
+10/28/2023 21:40:10 - INFO - __main__ -     weighted_f1 = 0.5714451850895309
+10/28/2023 21:40:10 - INFO - __main__ -     weighted_precision = 0.5333529429741315
+10/28/2023 21:40:10 - INFO - __main__ -     weighted_recall = 0.6179491230842156
+10/28/2023 21:40:11 - INFO - __main__ -   ***** Running evaluation on test dataset (27000 step) *****
+10/28/2023 21:40:11 - INFO - __main__ -     Num examples = 5427
+10/28/2023 21:40:11 - INFO - __main__ -     Eval Batch size = 32
+Evaluating: 100%|████████████████████████████████████████████████████████| 170/170 [00:05<00:00, 30.74it/s]
+10/28/2023 21:40:17 - INFO - __main__ -   ***** Eval results on test dataset *****
+10/28/2023 21:40:17 - INFO - __main__ -     accuracy = 0.4107241569928137
+10/28/2023 21:40:17 - INFO - __main__ -     loss = 0.14493457385722328
+10/28/2023 21:40:17 - INFO - __main__ -     macro_f1 = 0.49509864048247715
+10/28/2023 21:40:17 - INFO - __main__ -     macro_precision = 0.46803209148152963
+10/28/2023 21:40:17 - INFO - __main__ -     macro_recall = 0.5327674988895083
+10/28/2023 21:40:17 - INFO - __main__ -     micro_f1 = 0.5708661417322836
+10/28/2023 21:40:17 - INFO - __main__ -     micro_precision = 0.5299851089752268
+10/28/2023 21:40:17 - INFO - __main__ -     micro_recall = 0.6185811344604203
+10/28/2023 21:40:17 - INFO - __main__ -     weighted_f1 = 0.572919176976192
+10/28/2023 21:40:17 - INFO - __main__ -     weighted_precision = 0.5352600142430971
+10/28/2023 21:40:17 - INFO - __main__ -     weighted_recall = 0.6185811344604203
+10/28/2023 21:40:18 - INFO - __main__ -   ***** Running evaluation on test dataset (3000 step) *****
+10/28/2023 21:40:18 - INFO - __main__ -     Num examples = 5427
+10/28/2023 21:40:18 - INFO - __main__ -     Eval Batch size = 32
+Evaluating: 100%|████████████████████████████████████████████████████████| 170/170 [00:05<00:00, 30.61it/s]
+/u/s/a/salsabil/miniconda3/envs/proj_env/lib/python3.8/site-packages/sklearn/metrics/_classification.py:1471: UndefinedMetricWarning: Precision and F-score are ill-defined and being set to 0.0 in labels with no predicted samples. Use `zero_division` parameter to control this behavior.
+  _warn_prf(average, modifier, msg_start, len(result))
+/u/s/a/salsabil/miniconda3/envs/proj_env/lib/python3.8/site-packages/sklearn/metrics/_classification.py:1471: UndefinedMetricWarning: Precision and F-score are ill-defined and being set to 0.0 in labels with no predicted samples. Use `zero_division` parameter to control this behavior.
+  _warn_prf(average, modifier, msg_start, len(result))
+10/28/2023 21:40:23 - INFO - __main__ -   ***** Eval results on test dataset *****
+10/28/2023 21:40:23 - INFO - __main__ -     accuracy = 0.42804496038326884
+10/28/2023 21:40:23 - INFO - __main__ -     loss = 0.09273805267670575
+10/28/2023 21:40:23 - INFO - __main__ -     macro_f1 = 0.3800397926404078
+10/28/2023 21:40:23 - INFO - __main__ -     macro_precision = 0.43611617398602515
+10/28/2023 21:40:23 - INFO - __main__ -     macro_recall = 0.3851225450503642
+10/28/2023 21:40:23 - INFO - __main__ -     micro_f1 = 0.5805318214485348
+10/28/2023 21:40:23 - INFO - __main__ -     micro_precision = 0.5868582499192767
+10/28/2023 21:40:23 - INFO - __main__ -     micro_recall = 0.5743403381260863
+10/28/2023 21:40:23 - INFO - __main__ -     weighted_f1 = 0.5402370768324181
+10/28/2023 21:40:23 - INFO - __main__ -     weighted_precision = 0.5528498089695741
+10/28/2023 21:40:23 - INFO - __main__ -     weighted_recall = 0.5743403381260863
+10/28/2023 21:40:24 - INFO - __main__ -   ***** Running evaluation on test dataset (4000 step) *****
+10/28/2023 21:40:24 - INFO - __main__ -     Num examples = 5427
+10/28/2023 21:40:24 - INFO - __main__ -     Eval Batch size = 32
+Evaluating: 100%|████████████████████████████████████████████████████████| 170/170 [00:05<00:00, 30.74it/s]
+/u/s/a/salsabil/miniconda3/envs/proj_env/lib/python3.8/site-packages/sklearn/metrics/_classification.py:1471: UndefinedMetricWarning: Precision and F-score are ill-defined and being set to 0.0 in labels with no predicted samples. Use `zero_division` parameter to control this behavior.
+  _warn_prf(average, modifier, msg_start, len(result))
+/u/s/a/salsabil/miniconda3/envs/proj_env/lib/python3.8/site-packages/sklearn/metrics/_classification.py:1471: UndefinedMetricWarning: Precision and F-score are ill-defined and being set to 0.0 in labels with no predicted samples. Use `zero_division` parameter to control this behavior.
+  _warn_prf(average, modifier, msg_start, len(result))
+10/28/2023 21:40:30 - INFO - __main__ -   ***** Eval results on test dataset *****
+10/28/2023 21:40:30 - INFO - __main__ -     accuracy = 0.4431545973834531
+10/28/2023 21:40:30 - INFO - __main__ -     loss = 0.08939892925760325
+10/28/2023 21:40:30 - INFO - __main__ -     macro_f1 = 0.4124166005504936
+10/28/2023 21:40:30 - INFO - __main__ -     macro_precision = 0.5018471698956916
+10/28/2023 21:40:30 - INFO - __main__ -     macro_recall = 0.40013001742665477
+10/28/2023 21:40:30 - INFO - __main__ -     micro_f1 = 0.5890781722655628
+10/28/2023 21:40:30 - INFO - __main__ -     micro_precision = 0.5936146317984919
+10/28/2023 21:40:30 - INFO - __main__ -     micro_recall = 0.5846105229894138
+10/28/2023 21:40:30 - INFO - __main__ -     weighted_f1 = 0.5584021164172166
+10/28/2023 21:40:30 - INFO - __main__ -     weighted_precision = 0.5896626624851312
+10/28/2023 21:40:30 - INFO - __main__ -     weighted_recall = 0.5846105229894138
+10/28/2023 21:40:31 - INFO - __main__ -   ***** Running evaluation on test dataset (5000 step) *****
+10/28/2023 21:40:31 - INFO - __main__ -     Num examples = 5427
+10/28/2023 21:40:31 - INFO - __main__ -     Eval Batch size = 32
+Evaluating: 100%|████████████████████████████████████████████████████████| 170/170 [00:05<00:00, 30.71it/s]
+/u/s/a/salsabil/miniconda3/envs/proj_env/lib/python3.8/site-packages/sklearn/metrics/_classification.py:1471: UndefinedMetricWarning: Precision and F-score are ill-defined and being set to 0.0 in labels with no predicted samples. Use `zero_division` parameter to control this behavior.
+  _warn_prf(average, modifier, msg_start, len(result))
+/u/s/a/salsabil/miniconda3/envs/proj_env/lib/python3.8/site-packages/sklearn/metrics/_classification.py:1471: UndefinedMetricWarning: Precision and F-score are ill-defined and being set to 0.0 in labels with no predicted samples. Use `zero_division` parameter to control this behavior.
+  _warn_prf(average, modifier, msg_start, len(result))
+10/28/2023 21:40:37 - INFO - __main__ -   ***** Eval results on test dataset *****
+10/28/2023 21:40:37 - INFO - __main__ -     accuracy = 0.45531601252994286
+10/28/2023 21:40:37 - INFO - __main__ -     loss = 0.08599470439640915
+10/28/2023 21:40:37 - INFO - __main__ -     macro_f1 = 0.44426269111127237
+10/28/2023 21:40:37 - INFO - __main__ -     macro_precision = 0.5114745008803826
+10/28/2023 21:40:37 - INFO - __main__ -     macro_recall = 0.4419199189030228
+10/28/2023 21:40:37 - INFO - __main__ -     micro_f1 = 0.604233382800906
+10/28/2023 21:40:37 - INFO - __main__ -     micro_precision = 0.5974667902378745
+10/28/2023 21:40:37 - INFO - __main__ -     micro_recall = 0.6111550007900142
+10/28/2023 21:40:37 - INFO - __main__ -     weighted_f1 = 0.5755304839899852
+10/28/2023 21:40:37 - INFO - __main__ -     weighted_precision = 0.5965017323921566
+10/28/2023 21:40:37 - INFO - __main__ -     weighted_recall = 0.6111550007900142
+10/28/2023 21:40:38 - INFO - __main__ -   ***** Running evaluation on test dataset (6000 step) *****
+10/28/2023 21:40:38 - INFO - __main__ -     Num examples = 5427
+10/28/2023 21:40:38 - INFO - __main__ -     Eval Batch size = 32
+Evaluating: 100%|████████████████████████████████████████████████████████| 170/170 [00:05<00:00, 30.72it/s]
+/u/s/a/salsabil/miniconda3/envs/proj_env/lib/python3.8/site-packages/sklearn/metrics/_classification.py:1471: UndefinedMetricWarning: Precision and F-score are ill-defined and being set to 0.0 in labels with no predicted samples. Use `zero_division` parameter to control this behavior.
+  _warn_prf(average, modifier, msg_start, len(result))
+/u/s/a/salsabil/miniconda3/envs/proj_env/lib/python3.8/site-packages/sklearn/metrics/_classification.py:1471: UndefinedMetricWarning: Precision and F-score are ill-defined and being set to 0.0 in labels with no predicted samples. Use `zero_division` parameter to control this behavior.
+  _warn_prf(average, modifier, msg_start, len(result))
+10/28/2023 21:40:43 - INFO - __main__ -   ***** Eval results on test dataset *****
+10/28/2023 21:40:43 - INFO - __main__ -     accuracy = 0.4262023217247098
+10/28/2023 21:40:43 - INFO - __main__ -     loss = 0.08768946613897295
+10/28/2023 21:40:43 - INFO - __main__ -     macro_f1 = 0.47142546915918626
+10/28/2023 21:40:43 - INFO - __main__ -     macro_precision = 0.4878007097615958
+10/28/2023 21:40:43 - INFO - __main__ -     macro_recall = 0.48090994657016145
+10/28/2023 21:40:43 - INFO - __main__ -     micro_f1 = 0.5835707136808068
+10/28/2023 21:40:43 - INFO - __main__ -     micro_precision = 0.5690690690690691
+10/28/2023 21:40:43 - INFO - __main__ -     micro_recall = 0.5988307789540211
+10/28/2023 21:40:43 - INFO - __main__ -     weighted_f1 = 0.5784916340857147
+10/28/2023 21:40:43 - INFO - __main__ -     weighted_precision = 0.575227213911071
+10/28/2023 21:40:43 - INFO - __main__ -     weighted_recall = 0.5988307789540211
+10/28/2023 21:40:44 - INFO - __main__ -   ***** Running evaluation on test dataset (7000 step) *****
+10/28/2023 21:40:44 - INFO - __main__ -     Num examples = 5427
+10/28/2023 21:40:44 - INFO - __main__ -     Eval Batch size = 32
+Evaluating: 100%|████████████████████████████████████████████████████████| 170/170 [00:05<00:00, 30.71it/s]
+/u/s/a/salsabil/miniconda3/envs/proj_env/lib/python3.8/site-packages/sklearn/metrics/_classification.py:1471: UndefinedMetricWarning: Precision and F-score are ill-defined and being set to 0.0 in labels with no predicted samples. Use `zero_division` parameter to control this behavior.
+  _warn_prf(average, modifier, msg_start, len(result))
+/u/s/a/salsabil/miniconda3/envs/proj_env/lib/python3.8/site-packages/sklearn/metrics/_classification.py:1471: UndefinedMetricWarning: Precision and F-score are ill-defined and being set to 0.0 in labels with no predicted samples. Use `zero_division` parameter to control this behavior.
+  _warn_prf(average, modifier, msg_start, len(result))
+10/28/2023 21:40:50 - INFO - __main__ -   ***** Eval results on test dataset *****
+10/28/2023 21:40:50 - INFO - __main__ -     accuracy = 0.44794545789570667
+10/28/2023 21:40:50 - INFO - __main__ -     loss = 0.08613573786090402
+10/28/2023 21:40:50 - INFO - __main__ -     macro_f1 = 0.47129804006701775
+10/28/2023 21:40:50 - INFO - __main__ -     macro_precision = 0.4987660234849393
+10/28/2023 21:40:50 - INFO - __main__ -     macro_recall = 0.4731307045039113
+10/28/2023 21:40:50 - INFO - __main__ -     micro_f1 = 0.6045554963053248
+10/28/2023 21:40:50 - INFO - __main__ -     micro_precision = 0.5837010885554574
+10/28/2023 21:40:50 - INFO - __main__ -     micro_recall = 0.6269552851951335
+10/28/2023 21:40:50 - INFO - __main__ -     weighted_f1 = 0.5886500597570009
+10/28/2023 21:40:50 - INFO - __main__ -     weighted_precision = 0.5762656893392628
+10/28/2023 21:40:50 - INFO - __main__ -     weighted_recall = 0.6269552851951335
+10/28/2023 21:40:51 - INFO - __main__ -   ***** Running evaluation on test dataset (8000 step) *****
+10/28/2023 21:40:51 - INFO - __main__ -     Num examples = 5427
+10/28/2023 21:40:51 - INFO - __main__ -     Eval Batch size = 32
+Evaluating: 100%|████████████████████████████████████████████████████████| 170/170 [00:05<00:00, 30.72it/s]
+/u/s/a/salsabil/miniconda3/envs/proj_env/lib/python3.8/site-packages/sklearn/metrics/_classification.py:1471: UndefinedMetricWarning: Precision and F-score are ill-defined and being set to 0.0 in labels with no predicted samples. Use `zero_division` parameter to control this behavior.
+  _warn_prf(average, modifier, msg_start, len(result))
+/u/s/a/salsabil/miniconda3/envs/proj_env/lib/python3.8/site-packages/sklearn/metrics/_classification.py:1471: UndefinedMetricWarning: Precision and F-score are ill-defined and being set to 0.0 in labels with no predicted samples. Use `zero_division` parameter to control this behavior.
+  _warn_prf(average, modifier, msg_start, len(result))
+10/28/2023 21:40:56 - INFO - __main__ -   ***** Eval results on test dataset *****
+10/28/2023 21:40:56 - INFO - __main__ -     accuracy = 0.42472821079786255
+10/28/2023 21:40:56 - INFO - __main__ -     loss = 0.08747302407727522
+10/28/2023 21:40:56 - INFO - __main__ -     macro_f1 = 0.48544176815611484
+10/28/2023 21:40:56 - INFO - __main__ -     macro_precision = 0.5038319846047886
+10/28/2023 21:40:56 - INFO - __main__ -     macro_recall = 0.5032439793034675
+10/28/2023 21:40:56 - INFO - __main__ -     micro_f1 = 0.582617864136165
+10/28/2023 21:40:56 - INFO - __main__ -     micro_precision = 0.5566268527845734
+10/28/2023 21:40:56 - INFO - __main__ -     micro_recall = 0.6111550007900142
+10/28/2023 21:40:56 - INFO - __main__ -     weighted_f1 = 0.5836168150459686
+10/28/2023 21:40:56 - INFO - __main__ -     weighted_precision = 0.5743524660894662
+10/28/2023 21:40:56 - INFO - __main__ -     weighted_recall = 0.6111550007900142
+10/28/2023 21:40:57 - INFO - __main__ -   ***** Running evaluation on test dataset (9000 step) *****
+10/28/2023 21:40:57 - INFO - __main__ -     Num examples = 5427
+10/28/2023 21:40:57 - INFO - __main__ -     Eval Batch size = 32
+Evaluating: 100%|████████████████████████████████████████████████████████| 170/170 [00:05<00:00, 30.71it/s]
+/u/s/a/salsabil/miniconda3/envs/proj_env/lib/python3.8/site-packages/sklearn/metrics/_classification.py:1471: UndefinedMetricWarning: Precision and F-score are ill-defined and being set to 0.0 in labels with no predicted samples. Use `zero_division` parameter to control this behavior.
+  _warn_prf(average, modifier, msg_start, len(result))
+/u/s/a/salsabil/miniconda3/envs/proj_env/lib/python3.8/site-packages/sklearn/metrics/_classification.py:1471: UndefinedMetricWarning: Precision and F-score are ill-defined and being set to 0.0 in labels with no predicted samples. Use `zero_division` parameter to control this behavior.
+  _warn_prf(average, modifier, msg_start, len(result))
+10/28/2023 21:41:03 - INFO - __main__ -   ***** Eval results on test dataset *****
+10/28/2023 21:41:03 - INFO - __main__ -     accuracy = 0.4391007923346232
+10/28/2023 21:41:03 - INFO - __main__ -     loss = 0.09415904024944585
+10/28/2023 21:41:03 - INFO - __main__ -     macro_f1 = 0.4781387462573659
+10/28/2023 21:41:03 - INFO - __main__ -     macro_precision = 0.4999272672713603
+10/28/2023 21:41:03 - INFO - __main__ -     macro_recall = 0.49255595021159404
+10/28/2023 21:41:03 - INFO - __main__ -     micro_f1 = 0.5775888717156105
+10/28/2023 21:41:03 - INFO - __main__ -     micro_precision = 0.5652700045378914
+10/28/2023 21:41:03 - INFO - __main__ -     micro_recall = 0.590456628219308
+10/28/2023 21:41:03 - INFO - __main__ -     weighted_f1 = 0.5745046832557684
+10/28/2023 21:41:03 - INFO - __main__ -     weighted_precision = 0.5728610076141248
+10/28/2023 21:41:03 - INFO - __main__ -     weighted_recall = 0.590456628219308
+
