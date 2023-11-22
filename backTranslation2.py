@@ -4,7 +4,7 @@ from BackTranslation import BackTranslation
 
 trans = BackTranslation()
 
-def read_tsv(group, delimiter='\t'):
+def read_tsv(group, file, delimiter='\t'):
     """
     Reads a .tsv file and returns a Pandas DataFrame.
 
@@ -16,7 +16,7 @@ def read_tsv(group, delimiter='\t'):
     - pd.DataFrame: The DataFrame containing the data from the .tsv file.
     """
     try:
-        file_path = os.path.join('data', group, 'train.tsv')
+        file_path = os.path.join('data', group, file)
         # Read the .tsv file into a DataFrame
         dataframe = pd.read_csv(file_path, delimiter=delimiter, header=None, names=['text', 'emotion', 'labeler'])
         return dataframe
@@ -24,8 +24,10 @@ def read_tsv(group, delimiter='\t'):
         print(f"Error reading the .tsv file: {e}")
         return None
 
-folder = 'ekman'
-df = read_tsv(folder)
+df = read_tsv('group', 'train.tsv')
+length = len(read_tsv('group','augmented_train.tsv'))
+df = df[length:]
+
 chunk_size = 50
 chunks = [df[i:i + chunk_size] for i in range(0, len(df), chunk_size)]
 
@@ -33,20 +35,17 @@ count = 0
 for chunk in chunks:
     output = []
     for line in chunk['text'].values.tolist():
-        print(line)
-        result = trans.translate(line, src='en', tmp='ru', sleeping=60)
+        result = trans.translate(line, src='en', tmp = 'ru',sleeping = 0.2)
         output.append(result.result_text)
-    
     translated_df = pd.DataFrame({
-        'text': output,
-        'emotion': chunk['emotion'],
-        'labeler': chunk['labeler']
+    'text': output,
+    'emotion': chunk['emotion'],
+    'labeler': chunk['labeler']
     })
-
     # Specify the path to the existing .tsv file
-    existing_file_path = os.path.join('data', folder, 'augmented_train.tsv')
+    existing_file_path = os.path.join('data','group','augmented_train.tsv')
 
     # Append the new_data DataFrame to the existing .tsv file
     translated_df.to_csv(existing_file_path, sep='\t', mode='a', header=False, index=False)
-    print(f'completed {count}')
+    print(f'completed {count}') 
     count += 1
