@@ -1,61 +1,60 @@
-import btranslation
 import pandas as pd
 import os
-import time
+from BackTranslation import BackTranslation
+import sys
 
-def read_tsv(group, delimiter='\t'):
+trans = BackTranslation()
+
+def read_tsv(group, file, delimiter='\t'):
+    """
+    Reads a .tsv file and returns a Pandas DataFrame.
+
+    Parameters:
+    - file_path (str): Path to the .tsv file.
+    - delimiter (str): Delimiter used in the file (default is '\t' for tab-separated values).
+
+    Returns:
+    - pd.DataFrame: The DataFrame containing the data from the .tsv file.
+    """
     try:
-        file_path = os.path.join('data', group, 'train.tsv')
+        file_path = os.path.join('data', group, file)
+        # Read the .tsv file into a DataFrame
         dataframe = pd.read_csv(file_path, delimiter=delimiter, header=None, names=['text', 'emotion', 'labeler'])
         return dataframe
     except Exception as e:
         print(f"Error reading the .tsv file: {e}")
         return None
 
-def createFile(group, chunk_size=100, max_attempts=2):
-    original_df = read_tsv(group)
+group = sys.argv[1]
+df = read_tsv(group, 'train.tsv')
+length = len(read_tsv(group,'augmented_train.tsv'))
+df = df[length:]
 
-    # Split the DataFrame into chunks
-    chunks = [original_df[i:i + chunk_size] for i in range(0, len(original_df), chunk_size)]
+chunk_size = 50
+chunks = [df[i:i + chunk_size] for i in range(0, len(df), chunk_size)]
 
-    translated_dfs = []
+chunk_number = 0
+for chunk in chunks:
+    count = 0
+    while count < 2:
+        try:
+            output = []
+            for line in chunk['text'].values.tolist():
+                result = trans.translate(line, src='en', tmp = 'ru',sleeping = 0.5)
+                output.append(result.result_text)
+            translated_df = pd.DataFrame({
+            'text': output,
+            'emotion': chunk['emotion'],
+            'labeler': chunk['labeler']
+            })
+            # Specify the path to the existing .tsv file
+            existing_file_path = os.path.join('data',group,'augmented_train.tsv')
 
-    for chunk in chunks:
-        attempts = 0
-        while attempts < max_attempts:
-            try:
-                # Use the entire chunk for back translation
-                btrans = btranslation.back_translation(chunk['text'].values, language='ru')
-                
-                # Combine the original chunk and the translated text
-                translated_df = pd.DataFrame({
-                    'text': btrans['Back Translated'],
-                    'emotion': chunk['emotion'],
-                    'labeler': chunk['labeler']
-                })
-
-                translated_dfs.append(translated_df)
-                break  # Break the while loop if successful
-            except Exception as e:
-                print(f"Error in chunk translation: {e}")
-                attempts += 1
-                if attempts < max_attempts:
-                    print(f"Retrying in 2 minutes (attempt {attempts}/{max_attempts})")
-                    # Sleep for 2 minutes before retrying
-                    time.sleep(120)
-                continue
-
-    # Concatenate all translated chunks
-    translated_df = pd.concat(translated_dfs, ignore_index=True)
-
-    # Combine the original DataFrame and the translated DataFrame
-    combined_df = pd.concat([original_df, translated_df], ignore_index=True)
-    combined_df = combined_df.drop_duplicates()
-
-    path = os.path.join('data', group, 'augmented_train.tsv')
-    combined_df.to_csv(path, sep='\t',header = False,  index=False)
-
-createFile('original')
-createFile('group')
-createFile('ekman')
-
+            # Append the new_data DataFrame to the existing .tsv file
+            translated_df.to_csv(existing_file_path, sep='\t', mode='a', header=False, index=False)
+            print(f'completed {chunk_number}') 
+            chunk_number += 1
+            break
+        except Exception as e: 
+            print(f'Error: {e}')
+            count += 1
