@@ -40,7 +40,7 @@ for chunk in chunks:
         try:
             output = []
             for line in chunk['text'].values.tolist():
-                result = trans.translate(line, src='en', tmp = 'ru',sleeping = 0.5)
+                result = trans.translate(line, src='en', tmp = 'ru',sleeping = 0.6)
                 output.append(result.result_text)
             translated_df = pd.DataFrame({
             'text': output,
