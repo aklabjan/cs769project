@@ -66,10 +66,11 @@ def combine_files(taxonomy):
     combined_df = original_df.append(translated_df, ignore_index=True)
     print(f"Count of duplicates removed: {combined_df.duplicated().sum()}")
     combined_df = combined_df.drop_duplicates()
+    print(f'Length after combined: {len(combined_df)}')
     path = os.path.join('data',taxonomy,'augmented_train.tsv')
-    combined_df.to_csv(path, sep='\t', index=False)
+    combined_df.to_csv(path, sep='\t', header = False, index=False)
 
 if __name__ == "__main__":
     taxonomy = sys.argv[1]
-    create_backTranslate(taxonomy)
-    #combine_files(taxonomy)
+    #create_backTranslate(taxonomy)
+    combine_files(taxonomy)
