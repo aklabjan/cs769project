@@ -64,6 +64,7 @@ def combine_files(taxonomy):
     original_df = read_tsv(taxonomy,'train.tsv')
     translated_df = read_tsv(taxonomy,'augmented_train.tsv')
     combined_df = original_df.append(translated_df, ignore_index=True)
+    print(f"Count of duplicates removed: {combined_df.duplicated().sum()}")
     combined_df = combined_df.drop_duplicates()
     path = os.path.join('data',taxonomy,'augmented_train.tsv')
     combined_df.to_csv(path, sep='\t', index=False)
