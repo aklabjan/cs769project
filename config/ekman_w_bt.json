@@ -3,7 +3,7 @@
   "data_dir": "data/ekman",
   "ckpt_dir": "ckpt/ekman",
   "output_dir": "bert-base-cased-goemotions-ekman",
-  "train_file": "train.tsv",
+  "train_file": "augmented_train.tsv",
   "dev_file": "dev.tsv",
   "test_file": "test.tsv",
   "label_file": "labels.txt",

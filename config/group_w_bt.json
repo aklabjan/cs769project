@@ -3,7 +3,7 @@
   "data_dir": "data/group",
   "ckpt_dir": "ckpt/group",
   "output_dir": "bert-base-cased-goemotions-group",
-  "train_file": "train.tsv",
+  "train_file": "augmented_train.tsv",
   "dev_file": "dev.tsv",
   "test_file": "test.tsv",
   "label_file": "labels.txt",
