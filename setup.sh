@@ -1,4 +1,4 @@
-conda create --name goemotion_env python=3.8.18
+conda create --name --y goemotion_env python=3.8.18
 conda activate goemotion_env
 conda install --y pytorch torchvision torchaudio pytorch-cuda=12.1 -c pytorch -c nvidia
 conda install --y  transformers -c conda-forge
